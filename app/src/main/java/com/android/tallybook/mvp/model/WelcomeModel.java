@@ -11,6 +11,11 @@ public class WelcomeModel extends BaseMVPModel<WelcomePresenter, IWelcome.M> {
 
     @Override
     public IWelcome.M getContract() {
-        return null;
+        return new IWelcome.M() {
+            @Override
+            public boolean hasLogin() {
+                return false;
+            }
+        };
     }
 }

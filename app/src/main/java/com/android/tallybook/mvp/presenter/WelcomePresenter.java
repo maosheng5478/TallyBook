@@ -13,6 +13,16 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
 
     @Override
     public IWelcome.P getContract() {
-        return null;
+        return new IWelcome.P() {
+            @Override
+            public void firstEntetrJudge() {
+
+            }
+
+            @Override
+            public void hasLogin() {
+
+            }
+        };
     }
 }

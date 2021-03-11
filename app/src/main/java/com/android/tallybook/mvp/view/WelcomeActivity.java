@@ -10,7 +10,17 @@ import com.android.tallybook.mvp.presenter.WelcomePresenter;
 public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.V> {
     @Override
     public IWelcome.V getContract() {
-        return null;
+        return new IWelcome.V() {
+            @Override
+            public void firstEntetrJudge() {
+
+            }
+
+            @Override
+            public void hasLogin(boolean flag, String information) {
+
+            }
+        };
     }
 
     @Override
