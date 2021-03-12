@@ -16,12 +16,12 @@ public class StatusBarUtils {
     public static StatusBarUtils with(Activity activity) {
         return new StatusBarUtils(activity);
     }
+
     /**
      * 利用反射获取状态栏高度
      *
      * @return
      */
-
     public static int getStatusBarHeight(Context context) {
         int result = 0;
         //获取状态栏高度的资源id
@@ -32,6 +32,10 @@ public class StatusBarUtils {
         Log.e("getStatusBarHeight", result + "");
         return result;
     }
+
+    /**
+     * 状态栏透明，沉浸状态栏
+     */
     public void setStatuImmersive(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             View decorView=activity.getWindow().getDecorView();
@@ -46,6 +50,11 @@ public class StatusBarUtils {
         }
         return this;
     }
+
+    /**
+     * 设置状态栏颜色黑色
+     * @param activity
+     */
     public static void setStyleBlack(Activity activity){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);

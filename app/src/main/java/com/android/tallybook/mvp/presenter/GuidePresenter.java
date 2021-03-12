@@ -1,0 +1,68 @@
+package com.android.tallybook.mvp.presenter;
+
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import androidx.viewpager.widget.ViewPager;
+
+import com.android.tallybook.R;
+import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.mvp.IGuide;
+import com.android.tallybook.mvp.model.GuideModel;
+import com.android.tallybook.mvp.view.GudieActivity;
+
+import java.util.ArrayList;
+
+public class GuidePresenter extends BaseMVPPresenter<GudieActivity, GuideModel, IGuide.P> {
+    @Override
+    public GuideModel getModelInstence() {
+        return new GuideModel(this);
+    }
+
+    @Override
+    public IGuide.P getContract() {
+        return new IGuide.P() {
+            @Override
+            public void initViewPager(int[] images, ArrayList<ImageView> imageViews, Button button) {
+                ViewPager.LayoutParams mParams = new ViewPager.LayoutParams();
+                for(int i = 0; i< images.length; i++) {
+                    ImageView iv = new ImageView(mView);
+                    iv.setLayoutParams(mParams);//设置布局
+                    iv.setImageResource(images[i]);//为ImageView添加图片资源
+                    iv.setScaleType(ImageView.ScaleType.FIT_XY);//这里也是一个图片的适配
+                    imageViews.add(iv);
+                    if (i == images.length - 1) {
+                        button.setVisibility(View.VISIBLE);
+                        button.setEnabled(true);
+                    }
+                }
+            }
+
+            @Override
+            public void initDot(ImageView[] dotView, int[] images, ArrayList<ImageView> imageViews) {
+                LinearLayout layout = mView.findViewById(R.id.guide_layout_dot);
+                LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(20, 20);
+                mParams.setMargins(10, 0, 10,0);//设置小圆点左右之间的间隔
+                dotView = new ImageView[images.length];
+                //判断小圆点的数量，从0开始，0表示第一个
+                for(int i = 0; i < imageViews.size(); i++)
+                {
+                    ImageView imageView = new ImageView(mView);
+                    imageView.setLayoutParams(mParams);
+                    imageView.setImageResource(R.drawable.dotselector);
+                    if(i== 0)
+                    {
+                        imageView.setSelected(true);//默认启动时，选中第一个小圆点
+                    }
+                    else {
+                        imageView.setSelected(false);
+                    }
+                    dotView[i] = imageView;//得到每个小圆点的引用，用于滑动页面时，（onPageSelected方法中）更改它们的状态。
+                    layout.addView(imageView);//添加到布局里面显示
+                }
+            }
+        };
+    }
+}

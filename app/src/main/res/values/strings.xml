@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TallyBook</string>
+    <string name="begin_test">开始体验</string>
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/guide_vp">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp17"
+        android:layout_above="@+id/guide_layout_dot"
+        android:layout_centerHorizontal="true">
+    </Button>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/guide_btn_begin"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/dp30"
+        android:id="@+id/guide_layout_dot">
+
+    </LinearLayout>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="@dimen/dp35"
+        android:id="@+id/guide_btn_begin"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp70"
+        android:text="@string/begin_test"
+        android:textSize="@dimen/dp13"
+        android:background="@drawable/round_btn"
+        android:textColor="@color/white"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:visibility="invisible"
+        android:clickable="false"
+        >
+    </Button>
+</RelativeLayout>
