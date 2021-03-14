@@ -6,6 +6,7 @@ import com.android.tallybook.R;
 import com.android.tallybook.baseMVP.BaseMVPActivity;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.presenter.WelcomePresenter;
+import com.android.tallybook.utils.StatusBarUtils;
 
 public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.V> {
     @Override
@@ -13,7 +14,7 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
         return new IWelcome.V() {
             @Override
             public void firstEntetrJudge() {
-
+                mPresenter.getContract().firstEntetrJudge();
             }
 
             @Override
@@ -40,7 +41,8 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
 
     @Override
     public void initData() {
-
+        StatusBarUtils.with(this).setStatuImmersive();
+        getContract().firstEntetrJudge();
     }
 
     @Override

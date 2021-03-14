@@ -6,10 +6,12 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -91,6 +93,7 @@ public class APPUtils implements Application.ActivityLifecycleCallbacks{
         }
         return vsname;
     }
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static Application getApp() {
         if (sApp != null)
             return sApp;
@@ -108,6 +111,7 @@ public class APPUtils implements Application.ActivityLifecycleCallbacks{
         System.exit(0);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static Drawable getAppIcon() {
         return getAppIcon(getApp().getPackageName());
     }
@@ -118,6 +122,7 @@ public class APPUtils implements Application.ActivityLifecycleCallbacks{
      * @param packageName The name of the package.
      * @return the application's icon
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static Drawable getAppIcon(final String packageName) {
         if (StringUtils.isSpace(packageName)) return null;
         try {

@@ -15,25 +15,31 @@ import com.android.tallybook.utils.StatusBarUtils;
 
 import java.util.ArrayList;
 
-public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> {
+public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> implements ViewPager.OnPageChangeListener{
 
     private ViewPager gudie_vp;
     private Button gudie_btn_begin;
     private GudieViewPagerAdapter viewPagerAdapter;
     //图片资源
-    private static int[] images = {};
+    private static int[] images = {R.color.bule,R.color.green,R.color.red,R.color.orange};
     private ArrayList<ImageView> imageViews;
     //底部切换圆点
     private ImageView[] dotView;
 
     @Override
     public IGuide.V getContract() {
-        return null;
+        return new IGuide.V() {
+            @Override
+            public void noFristLogin() {
+                mPresenter.getContract().noFristLogin();
+            }
+        };
     }
 
     @Override
     public void initView() {
         imageViews = new ArrayList<ImageView>();
+        dotView = new ImageView[images.length];
         gudie_vp = findViewById(R.id.guide_vp);
         gudie_btn_begin = findViewById(R.id.guide_btn_begin);
 
@@ -44,6 +50,10 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> {
     @Override
     public void initListener() {
         gudie_btn_begin.setOnClickListener(this);
+
+        viewPagerAdapter = new GudieViewPagerAdapter(imageViews);
+        gudie_vp.setAdapter(viewPagerAdapter);
+        gudie_vp.addOnPageChangeListener(this);
     }
 
     @Override
@@ -70,7 +80,7 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> {
 
     @Override
     public void destroy() {
-
+        getContract().noFristLogin();
     }
 
     @Override
@@ -79,5 +89,34 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> {
             case R.id.guide_btn_begin:
                 //jump to new page
         }
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        if (position == imageViews.size() - 1) {
+            gudie_btn_begin.setVisibility(View.VISIBLE);
+            gudie_btn_begin.setEnabled(true);
+        }else {
+            gudie_btn_begin.setVisibility(View.INVISIBLE);
+            gudie_btn_begin.setEnabled(false);
+        }
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        for (int i = 0; i < dotView.length; i++) {
+            if (position == i) {
+                dotView[i].setSelected(true);
+            } else {
+                dotView[i].setSelected(false);
+            }
+
+        }
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
     }
 }
