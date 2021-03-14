@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TallyBook</string>
     <string name="begin_test">开始体验</string>
+    <string name="login_time_out">登录状态已过期，请重新登录</string>
 </resources>

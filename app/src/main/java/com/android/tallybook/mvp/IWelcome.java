@@ -3,9 +3,12 @@ package com.android.tallybook.mvp;
 public interface IWelcome {
     interface V{
         /**
-         * 判断是否是第一次进入app
+         * 进入app怕判断
+         * 是否第一次进入
+         * 是否有登录用户
+         * 用户登录是否过期或修改密码
          */
-        void firstEntetrJudge();
+        void EntetrJudge();
 
         /**
          * @param flag true跳转程序主页面,false显示错误信息
@@ -22,15 +25,16 @@ public interface IWelcome {
          * true：不是第一次进入
          *      进行用户登入判断
          */
-        void firstEntetrJudge();
+        void EntetrJudge();
 
         /**
          * 判断本地是否保存已登录用户
          * 根据mModel.getContract().hasLogin()返回判断
          * false：不存在已登录用户或登录信息错误
          * ture:为成功跳转程序主页面
+         * @return
          */
-        void hasLogin();
+        boolean hasLogin();
     }
     interface M{
 

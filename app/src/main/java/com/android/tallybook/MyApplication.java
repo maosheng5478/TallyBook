@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.android.tallybook.mvp.view.WelcomeActivity;
+
 import cat.ereza.customactivityoncrash.CustomActivityOnCrash;
 import cat.ereza.customactivityoncrash.config.CaocConfig;
 
@@ -30,8 +32,8 @@ public class MyApplication extends Application {
                 .trackActivities(true)     //错误页面中显示错误详细信息；针对框架自带程序崩溃后显示的页面有用(DefaultErrorActivity)。
                 .minTimeBetweenCrashesMs(2000)      //定义应用程序崩溃之间的最短时间，以确定我们不在崩溃循环中。比如：在规定的时间内再次崩溃，框架将不处理，让系统处理！
                 .errorDrawable(R.mipmap.ic_launcher)     //崩溃页面显示的图标
-                .restartActivity(MainActivity.class)      //重新启动后的页面
-                //.errorActivity(LoginActivity.class) //程序崩溃后显示的页面
+                .restartActivity(WelcomeActivity.class)      //重新启动后的页面
+                //.errorActivity(.class) //程序崩溃后显示的页面
                 .eventListener(new CustomEventListener())//设置监听
                 .apply();
         //如果没有任何配置，程序崩溃显示的是默认的设置

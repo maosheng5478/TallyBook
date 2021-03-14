@@ -64,6 +64,7 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
     @Override
     public void initData() {
         StatusBarUtils.with(this).setStatuImmersive();
+        getContract().noFristLogin();
 
 
     }
@@ -80,7 +81,6 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
 
     @Override
     public void destroy() {
-        getContract().noFristLogin();
     }
 
     @Override

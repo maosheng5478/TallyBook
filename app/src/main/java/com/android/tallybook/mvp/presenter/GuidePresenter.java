@@ -41,7 +41,7 @@ public class GuidePresenter extends BaseMVPPresenter<GudieActivity, GuideModel, 
             public void initDot(ImageView[] dotView, int[] images, ArrayList<ImageView> imageViews) {
                 LinearLayout layout = mView.findViewById(R.id.guide_layout_dot);
                 LinearLayout.LayoutParams mParams = new LinearLayout.LayoutParams(70, 70);
-                mParams.setMargins(10, 0, 10,0);//设置小圆点左右之间的间隔
+                mParams.setMargins(1, 0, 1,0);//设置小圆点左右之间的间隔
 
                 //判断小圆点的数量，从0开始，0表示第一个
                 for(int i = 0; i < imageViews.size(); i++)
