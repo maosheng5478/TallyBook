@@ -30,7 +30,7 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
 
             @Override
             public void hasLogin(boolean flag, String information) {
-
+                //占时不做登录功能
             }
         };
     }
@@ -56,6 +56,7 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
     @Override
     public void initData() {
         StatusBarUtils.with(this).setStatuImmersive();
+        StatusBarUtils.setStyleBlack(this);
         getContract().EntetrJudge();
         wel_iv_appicon.setImageDrawable(APPUtils.getAppIcon());
         wel_tv_vsname.setText("版本号："+APPUtils.getvsname(this));

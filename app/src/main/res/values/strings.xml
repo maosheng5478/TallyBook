@@ -2,4 +2,7 @@
     <string name="app_name">TallyBook</string>
     <string name="begin_test">开始体验</string>
     <string name="login_time_out">登录状态已过期，请重新登录</string>
+    <string name="title_main">首页</string>
+    <string name="statistical">统计</string>
+    <string name="title_my">我的</string>
 </resources>

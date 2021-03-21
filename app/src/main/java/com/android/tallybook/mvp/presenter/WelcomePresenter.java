@@ -1,4 +1,4 @@
-package com.android.tallybook.mvp.presenter;
+ package com.android.tallybook.mvp.presenter;
 
 import com.android.tallybook.baseMVP.BaseMVPPresenter;
 import com.android.tallybook.mvp.IWelcome;
@@ -23,9 +23,10 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
         return new IWelcome.P() {
             @Override
             public void EntetrJudge() {
-                boolean isfrist = (boolean) SharePreferenceUtils.get(mView,"FRIST_LOGIN",false);
+                Boolean isfrist = (Boolean) SharePreferenceUtils.get(mView,"FRIST_LOGIN",false);
                 if (isfrist){
-                    boolean hasUser = getContract().hasLogin();
+                    ActivityUtils.go(mView, HomeActivity.class);
+                    /*boolean hasUser = getContract().hasLogin();
                     String login_condition = (String) SharePreferenceUtils.get(mView,"LOGIN_TIME_OUT","");
                     if (hasUser){
                         ActivityUtils.go(mView, HomeActivity.class);
@@ -35,7 +36,7 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
                             //状态登场出弹窗
                             ToastUtils.showToast(mView,login_condition);
                         }
-                    }
+                    }*/
                 }else {
                    new WeakHandler().postDelayed(new Runnable() {
                        @Override
