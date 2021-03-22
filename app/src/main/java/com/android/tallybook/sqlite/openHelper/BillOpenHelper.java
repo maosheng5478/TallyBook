@@ -16,7 +16,7 @@ public class BillOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table bill(id integer primary key autoincrement," +
+        db.execSQL("create table bills(id integer primary key autoincrement," +
                 "billname varchar(20) not null,cost double(16,2) not null,flow varchar(20),time varchar(20),remarks varcahr(100))");
        /* varchar(20) not null
         billname 账单类型

@@ -27,14 +27,15 @@ public abstract class BaseMVPFragment <P extends BaseMVPPresenter,CONTRACT> exte
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onActivityCreated (@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         mPresenter = getPresenterInstance();
         mPresenter.bindView(this);
         initView();
         initListener();
         initData();
     }
+
 
     public abstract void initView();
 

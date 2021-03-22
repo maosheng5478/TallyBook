@@ -5,4 +5,7 @@
     <string name="title_main">首页</string>
     <string name="statistical">统计</string>
     <string name="title_my">我的</string>
+    <string name="daily">日常</string>
+    <string name="total_balance">总计结余</string>
+    <string name="zero">0</string>
 </resources>

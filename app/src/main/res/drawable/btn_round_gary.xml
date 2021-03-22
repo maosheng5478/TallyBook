@@ -7,5 +7,5 @@
 
     <solid
         android:width="@dimen/dp2"
-        android:color="@color/white"/>
+        android:color="#e9eaee"/>
 </shape>

@@ -34,7 +34,7 @@
         android:text="@string/begin_test"
         android:textSize="@dimen/dp16"
         android:background="@drawable/round_btn"
-        android:textColor="@color/white"
+        android:textColor="@color/gray"
         android:textStyle="italic"
         style="@style/Widget.AppCompat.Button.Borderless"
         >

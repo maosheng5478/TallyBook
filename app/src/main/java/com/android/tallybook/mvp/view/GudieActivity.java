@@ -1,5 +1,7 @@
 package com.android.tallybook.mvp.view;
 
+import android.annotation.SuppressLint;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,7 +13,9 @@ import com.android.tallybook.adapter.GudieViewPagerAdapter;
 import com.android.tallybook.baseMVP.BaseMVPActivity;
 import com.android.tallybook.mvp.IGuide;
 import com.android.tallybook.mvp.presenter.GuidePresenter;
+import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.StatusBarUtils;
+import com.android.tallybook.utils.ToastUtils;
 
 import java.util.ArrayList;
 
@@ -83,11 +87,14 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
     public void destroy() {
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.guide_btn_begin:
                 //jump to new page
+                ActivityUtils.go(GudieActivity.this,HomeActivity.class);
+                finish();
         }
     }
 
@@ -118,5 +125,12 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (ToastUtils.onKeyDown(this,keyCode,event)){
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

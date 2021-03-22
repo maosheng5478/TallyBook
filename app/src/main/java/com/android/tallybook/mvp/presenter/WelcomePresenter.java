@@ -24,27 +24,30 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
             @Override
             public void EntetrJudge() {
                 Boolean isfrist = (Boolean) SharePreferenceUtils.get(mView,"FRIST_LOGIN",false);
-                if (isfrist){
-                    ActivityUtils.go(mView, HomeActivity.class);
-                    /*boolean hasUser = getContract().hasLogin();
-                    String login_condition = (String) SharePreferenceUtils.get(mView,"LOGIN_TIME_OUT","");
-                    if (hasUser){
-                        ActivityUtils.go(mView, HomeActivity.class);
-                    }else {
-                        ActivityUtils.go(mView, LoginActivity.class);
-                        if (!login_condition.equals("")){
-                            //状态登场出弹窗
-                            ToastUtils.showToast(mView,login_condition);
+                new WeakHandler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (isfrist){
+                            /*boolean hasUser = getContract().hasLogin();
+                            String login_condition = (String) SharePreferenceUtils.get(mView,"LOGIN_TIME_OUT","");
+                            if (hasUser){
+                                ActivityUtils.go(mView, HomeActivity.class);
+                            }else {
+                                ActivityUtils.go(mView, LoginActivity.class);
+                                if (!login_condition.equals("")){
+                                    //状态登场出弹窗
+                                    ToastUtils.showToast(mView,login_condition);
+                                }
+                            }*/
+                            ActivityUtils.go(mView, HomeActivity.class);
+                            //ActivityUtils.go(mView, GudieActivity.class);
+                            mView.finish();
+                        }else {
+                            ActivityUtils.go(mView, GudieActivity.class);
+                            mView.finish();
                         }
-                    }*/
-                }else {
-                   new WeakHandler().postDelayed(new Runnable() {
-                       @Override
-                       public void run() {
-                           ActivityUtils.go(mView, GudieActivity.class);
-                       }
-                   },1000);
-                }
+                    }
+                },1000);
             }
 
             @Override

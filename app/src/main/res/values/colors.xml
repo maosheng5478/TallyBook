@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
+
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-
+    <!--收入/支出-->
+    <color name="shallow_green">#91d781</color>
+    <color name="shallow_red">#ff9899</color>
+    <!--class color-->
+    <color name="shallow_blue">#7580fe</color>
+    <color name="low_orange">#ffa827</color>
+    <color name="shallow_blark">#353e4f</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <!--light color-->
     <color name="green">#37DC94</color>
     <color name="bule">#268AFF</color>
     <color name="red">#FA5C65</color>
@@ -16,7 +23,10 @@
 
     <color name="green_1">#6EC388</color>
     <color name="gray">#C0C0C0</color>
-    <color name="gray_shallow">#efefef</color>
+    <color name="gray_shallow">#f1f2f6</color>
+    <color name="cyan">#69c9d7</color>
+    <color name="yellow">#ffc928</color>
+    <color name="pink">#ffa3b2</color>
 
     <color name="transparent">#00000000</color>
 </resources>

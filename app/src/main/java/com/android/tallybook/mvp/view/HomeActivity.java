@@ -1,6 +1,7 @@
 package com.android.tallybook.mvp.view;
 
 import android.annotation.SuppressLint;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import com.android.tallybook.mvp.view.fragment.MainFragment;
 import com.android.tallybook.mvp.view.fragment.MyFragment;
 import com.android.tallybook.mvp.view.fragment.StatisticsFragment;
 import com.android.tallybook.utils.StatusBarUtils;
+import com.android.tallybook.utils.ToastUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
@@ -61,8 +63,10 @@ public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
 
     @Override
     public void initData() {
-        StatusBarUtils.with(this).setStatuImmersive();
-        StatusBarUtils.setStyleBlack(this);
+        //StatusBarUtils.with(this).setStatuImmersive();
+        //StatusBarUtils.setStyleBlack(this);
+        StatusBarUtils.MIUISetStatusBarLightMode(getWindow(),true);
+
         getContract().switchFragment(fragments,lastfragment,0);
         getSupportFragmentManager().beginTransaction().replace(R.id.home_layout,mainFragment).show(mainFragment).commit();
     }
@@ -114,4 +118,11 @@ public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
             return false;
         }
     };
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (ToastUtils.onKeyDown(this,keyCode,event)){
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 }
