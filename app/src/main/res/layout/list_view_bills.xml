@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="@dimen/dp70"
+     android:layout_width="match_parent"
+    android:id="@+id/list_view_bills_layout">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp17"
+        android:layout_marginRight="@dimen/dp17"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+
+        >
+        <RelativeLayout
+            android:layout_width="@dimen/dp45"
+            android:layout_height="@dimen/dp45"
+            android:id="@+id/bills_r2"
+            android:layout_centerVertical="true">
+            <com.android.tallybook.customView.RoundView
+                android:id="@+id/layout_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/list_bills_iv_infor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/bills_r2"
+            android:layout_marginLeft="@dimen/dp15"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/other"
+                android:layout_marginBottom="@dimen/dp3"
+                android:id="@+id/list_bills_tv_explantion"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/dp3"
+                android:text="@string/remarks"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zero"
+            android:textSize="@dimen/dp20"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/list_bills_tv_money"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

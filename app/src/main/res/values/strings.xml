@@ -8,4 +8,24 @@
     <string name="daily">日常</string>
     <string name="total_balance">总计结余</string>
     <string name="zero">0</string>
+    <string name="other">其他</string>
+    <string name="remarks">备注说明</string>
+    <string name="username">这么弱的语气</string>
+    <string name="openvip">开通会员</string>
+    <string name="out_data">导出数据</string>
+    <string name="in_data">导入数据</string>
+    <string name="own_pwd">隐私密码</string>
+    <string name="help">帮助手册</string>
+    <string name="parts">小部件</string>
+    <string name="invite">邀请好友</string>
+    <string name="assets">净资产</string>
+    <string name="totalassets">资产总额</string>
+    <string name="totalliabkikties">负债总额</string>
+    <string name="function">功能管理</string>
+    <string name="account">资产账户</string>
+    <string name="see_account">开启后，可以管理查看资产账户</string>
+    <string name="accountbook">账本预算</string>
+    <string name="set_budget">开启后，可以在首页设置预算控制开销</string>
+    <string name="individualization">个性化</string>
+    <string name="preference">偏好设置</string>
 </resources>

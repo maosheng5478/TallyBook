@@ -122,9 +122,10 @@
                             android:paddingLeft="@dimen/dp7"
                             android:paddingRight="@dimen/dp7"
                             android:textColor="@color/white"
-                            android:layout_marginLeft="@dimen/dp10"
+                            android:layout_marginLeft="@dimen/dp5"
                             android:id="@+id/fmain_tv_red"
-                            android:background="@drawable/tv_red"/>
+                            android:background="@drawable/tv_red"
+                            android:layout_marginStart="@dimen/dp5" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -137,6 +138,36 @@
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp50"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/fmain_iv_nodata"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fmain_tv_data"
+                     android:text=""
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+            <com.android.tallybook.customView.ListViewForScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp5"
+                android:id="@+id/fmain_lvfsv_list"
+                android:layout_marginLeft="@dimen/dp7"
+                android:layout_marginRight="@dimen/dp7"/>
         </LinearLayout>
     </ScrollView>
 

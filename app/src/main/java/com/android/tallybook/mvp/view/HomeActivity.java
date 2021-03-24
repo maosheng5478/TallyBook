@@ -45,7 +45,7 @@ public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
         mainFragment = new MainFragment();
         myFragment = new MyFragment();
         statisticsFragment = new StatisticsFragment();
-        fragments = new Fragment[]{mainFragment,myFragment,statisticsFragment};
+        fragments = new Fragment[]{mainFragment,statisticsFragment,myFragment};
         lastfragment = 0;
         bottomNavigationView = findViewById(R.id.home_bottomview);
 

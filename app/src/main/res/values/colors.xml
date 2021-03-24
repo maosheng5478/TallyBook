@@ -27,6 +27,7 @@
     <color name="cyan">#69c9d7</color>
     <color name="yellow">#ffc928</color>
     <color name="pink">#ffa3b2</color>
+    <color name="gray_in">#979797</color>
 
     <color name="transparent">#00000000</color>
 </resources>
