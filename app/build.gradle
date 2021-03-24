@@ -40,7 +40,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     /* use third-party sdk */
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
-    implementation 'com.rm:rmswitch:1.2.0'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
