@@ -13,7 +13,6 @@ import com.android.tallybook.adapter.GudieViewPagerAdapter;
 import com.android.tallybook.baseMVP.BaseMVPActivity;
 import com.android.tallybook.mvp.IGuide;
 import com.android.tallybook.mvp.presenter.GuidePresenter;
-import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.StatusBarUtils;
 import com.android.tallybook.utils.ToastUtils;
 
@@ -36,6 +35,11 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
             @Override
             public void noFristLogin() {
                 mPresenter.getContract().noFristLogin();
+            }
+
+            @Override
+            public void tohome(String msg) {
+                mPresenter.getContract().tohome(msg);
             }
         };
     }
@@ -85,6 +89,9 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
 
     @Override
     public void destroy() {
+        if (dialog!=null){
+            closeDialog(dialog);
+        }
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -93,8 +100,7 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
         switch (v.getId()){
             case R.id.guide_btn_begin:
                 //jump to new page
-                ActivityUtils.go(GudieActivity.this,HomeActivity.class);
-                finish();
+                getContract().tohome(getResources().getString(R.string.loading));
         }
     }
 

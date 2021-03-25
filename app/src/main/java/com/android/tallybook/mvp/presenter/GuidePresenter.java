@@ -1,6 +1,5 @@
 package com.android.tallybook.mvp.presenter;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +11,9 @@ import com.android.tallybook.baseMVP.BaseMVPPresenter;
 import com.android.tallybook.mvp.IGuide;
 import com.android.tallybook.mvp.model.GuideModel;
 import com.android.tallybook.mvp.view.GudieActivity;
+import com.android.tallybook.mvp.view.HomeActivity;
+import com.android.tallybook.utils.ActivityUtils;
+import com.android.tallybook.utils.WeakHandler;
 
 import java.util.ArrayList;
 
@@ -64,6 +66,20 @@ public class GuidePresenter extends BaseMVPPresenter<GudieActivity, GuideModel, 
             @Override
             public void noFristLogin() {
                 mModel.getContract().noFristLogin();
+            }
+
+            @Override
+            public void tohome(String msg) {
+                mView.dialog = mView.showloading(mView,msg);
+               new WeakHandler().postDelayed(new Runnable() {
+                   @Override
+                   public void run() {
+                       mView.dialog = mView.showloading(mView,msg);
+                       ActivityUtils.go(mView, HomeActivity.class);
+                       mView.finish();
+                   }
+               },1000);
+
             }
         };
     }

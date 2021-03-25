@@ -57,9 +57,14 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
     public void initData() {
         StatusBarUtils.with(this).setStatuImmersive();
         StatusBarUtils.setStyleBlack(this);
-        getContract().EntetrJudge();
         wel_iv_appicon.setImageDrawable(APPUtils.getAppIcon());
         wel_tv_vsname.setText("版本号："+APPUtils.getvsname(this));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getContract().EntetrJudge();
     }
 
     @Override

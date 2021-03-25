@@ -18,7 +18,6 @@ public class BillDao {
 
     private static final String TABLE_NAME = "bills";
 
-    private BillBean billBean = new BillBean();
 
     public BillDao(Context context){
         helper = new BillOpenHelper(context);
@@ -31,17 +30,19 @@ public class BillDao {
      */
     public List<BillBean> allBill(){
         List<BillBean> list = new ArrayList<BillBean>();
-        @SuppressLint("Recycle")
         Cursor cursor = db.rawQuery("select * from bills", null);
         while (cursor.moveToNext()){
+            BillBean billBean = new BillBean();
             billBean.setId(cursor.getInt(cursor.getColumnIndex("id")));
             billBean.setBillname(cursor.getString(cursor.getColumnIndex("billname")));
-            billBean.setCost(cursor.getDouble(cursor.getColumnIndex("cost")));
+            billBean.setCost(cursor.getString(cursor.getColumnIndex("cost")));
             billBean.setFlow(cursor.getString(cursor.getColumnIndex("flow")));
             billBean.setTime(cursor.getString(cursor.getColumnIndex("time")));
             billBean.setRemarks(cursor.getString(cursor.getColumnIndex("remarks")));
             list.add(billBean);
+            System.out.println(billBean);
         }
+        System.out.println(list);
         return list;
     }
 
@@ -56,9 +57,10 @@ public class BillDao {
         Cursor cursor = db.rawQuery("select * from bills where billname like '?' or cost like '?' or flow like ? or time like ? or remarks like ?",
                 new String[]{temp,temp,temp,temp});
         while (cursor.moveToNext()){
+            BillBean billBean = new BillBean();
             billBean.setId(cursor.getInt(cursor.getColumnIndex("id")));
             billBean.setBillname(cursor.getString(cursor.getColumnIndex("billname")));
-            billBean.setCost(cursor.getDouble(cursor.getColumnIndex("cost")));
+            billBean.setCost(cursor.getString(cursor.getColumnIndex("cost")));
             billBean.setFlow(cursor.getString(cursor.getColumnIndex("flow")));
             billBean.setTime(cursor.getString(cursor.getColumnIndex("time")));
             billBean.setRemarks(cursor.getString(cursor.getColumnIndex("remarks")));

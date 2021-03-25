@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="@dimen/dp70"
      android:layout_width="match_parent"
-    android:id="@+id/list_view_bills_layout">
+    android:id="@+id/list_view_bills_layout"
+    android:background="@drawable/layout_round_no">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/dp17"
         android:layout_marginRight="@dimen/dp17"
-        android:layout_marginTop="@dimen/dp5"
-        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp10"
+
 
         >
         <RelativeLayout
@@ -19,9 +21,10 @@
             android:id="@+id/bills_r2"
             android:layout_centerVertical="true">
             <com.android.tallybook.customView.RoundView
-                android:id="@+id/layout_img"
+                android:id="@+id/list_bills_layout_img"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                />
 
             <ImageView
                 android:id="@+id/list_bills_iv_infor"
@@ -43,21 +46,22 @@
                 android:textColor="@color/black"
                 android:text="@string/other"
                 android:layout_marginBottom="@dimen/dp3"
-                android:id="@+id/list_bills_tv_explantion"/>
+                android:id="@+id/list_bills_tv_class"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
                 android:layout_marginTop="@dimen/dp3"
                 android:text="@string/remarks"
-
+                android:id="@+id/list_bills_tv_explantion"
                 />
         </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/zero"
-            android:textSize="@dimen/dp20"
+            android:textColor="#666"
+            android:textSize="@dimen/dp16"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"

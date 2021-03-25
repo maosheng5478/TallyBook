@@ -3,11 +3,19 @@ package com.android.tallybook.bean;
 public class BillBean {
     private Integer id;
     private String billname;
-    private Double cost;
+    private String cost;
     private String flow;
+
     private String time;
     private String remarks;
 
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
     public String getRemarks() {
         return remarks;
     }
@@ -32,13 +40,6 @@ public class BillBean {
         this.billname = billname;
     }
 
-    public Double getCost() {
-        return cost;
-    }
-
-    public void setCost(Double cost) {
-        this.cost = cost;
-    }
 
     public String getFlow() {
         return flow;
@@ -46,6 +47,18 @@ public class BillBean {
 
     public void setFlow(String flow) {
         this.flow = flow;
+    }
+
+    @Override
+    public String toString() {
+        return "BillBean{" +
+                "id=" + id +
+                ", billname='" + billname + '\'' +
+                ", cost='" + cost + '\'' +
+                ", flow='" + flow + '\'' +
+                ", time='" + time + '\'' +
+                ", remarks='" + remarks + '\'' +
+                '}';
     }
 
     public String getTime() {

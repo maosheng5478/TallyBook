@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.android.tallybook.utils.LogUtils;
+
 public class BillOpenHelper extends SQLiteOpenHelper {
     private static String name = "tallybook.db";
     private static Integer version = 1;
@@ -17,14 +19,15 @@ public class BillOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table bills(id integer primary key autoincrement," +
-                "billname varchar(20) not null,cost double(16,2) not null,flow varchar(20),time varchar(20),remarks varcahr(100))");
+                "billname varchar(20) not null,cost varchar(20) not null,flow varchar(20),time varchar(20),remarks varcahr(100))");
        /* varchar(20) not null
         billname 账单类型
         cost     花费金额
         flow     收入/支出
         time     时间
         remarks  备注说明*/
-        db.execSQL("insert into bill(billname,cost,flow,time) values('日常','100.00','支出','20210320')");
+        db.execSQL("insert into bills(billname,cost,flow,time) values('日常','100.00','支出','20210320')");
+        db.execSQL("insert into bills(billname,cost,flow,time) values('餐饮','100.22','支出','20210320')");
     }
 
     @Override

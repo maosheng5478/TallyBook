@@ -9,6 +9,8 @@ public interface IGuide {
 
     interface V{
         void noFristLogin();
+
+        void tohome(String msg);
     }
 
     interface P{
@@ -17,6 +19,8 @@ public interface IGuide {
         void initDot(ImageView[] dotView,int[] images,ArrayList<ImageView> imageViews);
 
         void noFristLogin();
+
+        void tohome(String msg);
     }
 
     interface M{
