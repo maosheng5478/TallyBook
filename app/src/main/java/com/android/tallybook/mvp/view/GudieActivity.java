@@ -24,7 +24,7 @@ public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> imp
     private Button gudie_btn_begin;
     private GudieViewPagerAdapter viewPagerAdapter;
     //图片资源
-    private static int[] images = {R.color.bule,R.color.green,R.color.red,R.color.orange};
+    private static int[] images = {R.color.blue,R.color.green,R.color.red,R.color.orange};
     private ArrayList<ImageView> imageViews;
     //底部切换圆点
     private ImageView[] dotView;

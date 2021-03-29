@@ -1,18 +1,23 @@
  package com.android.tallybook.mvp.presenter;
 
 import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.customView.permission.PermissionListener;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.model.WelcomeModel;
 import com.android.tallybook.mvp.view.GudieActivity;
 import com.android.tallybook.mvp.view.HomeActivity;
 import com.android.tallybook.mvp.view.LoginActivity;
 import com.android.tallybook.mvp.view.WelcomeActivity;
+import com.android.tallybook.utils.APPUtils;
 import com.android.tallybook.utils.ActivityUtils;
+import com.android.tallybook.utils.PermissionUtil;
 import com.android.tallybook.utils.SharePreferenceUtils;
 import com.android.tallybook.utils.ToastUtils;
 import com.android.tallybook.utils.WeakHandler;
 
-public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeModel, IWelcome.P> {
+import java.util.List;
+
+ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeModel, IWelcome.P> {
     @Override
     public WelcomeModel getModelInstence() {
         return new WelcomeModel(this);
@@ -23,11 +28,15 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
         return new IWelcome.P() {
             @Override
             public void EntetrJudge() {
-                Boolean isfrist = (Boolean) SharePreferenceUtils.get(mView,"FRIST_LOGIN",false);
-                new WeakHandler().postDelayed(new Runnable() {
+                PermissionUtil util = new PermissionUtil(mView);
+                util.requestPermissions(APPUtils.getPermissionList(mView), new PermissionListener() {
                     @Override
-                    public void run() {
-                        if (isfrist){
+                    public void onGranted() {
+                        Boolean isfrist = (Boolean) SharePreferenceUtils.get(mView,"FRIST_LOGIN",false);
+                        new WeakHandler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (isfrist){
                             /*boolean hasUser = getContract().hasLogin();
                             String login_condition = (String) SharePreferenceUtils.get(mView,"LOGIN_TIME_OUT","");
                             if (hasUser){
@@ -39,15 +48,28 @@ public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeM
                                     ToastUtils.showToast(mView,login_condition);
                                 }
                             }*/
-                            ActivityUtils.go(mView, HomeActivity.class);
-                            //ActivityUtils.go(mView, GudieActivity.class);
-                            mView.finish();
-                        }else {
-                            ActivityUtils.go(mView, GudieActivity.class);
-                            mView.finish();
-                        }
+                                    ActivityUtils.go(mView, HomeActivity.class);
+                                    //ActivityUtils.go(mView, GudieActivity.class);
+                                    mView.finish();
+                                }else {
+                                    ActivityUtils.go(mView, GudieActivity.class);
+                                    mView.finish();
+                                }
+                            }
+                        },1000);
                     }
-                },1000);
+
+                    @Override
+                    public void onDenied(List<String> deniedPermission) {
+                        APPUtils.exitApp();
+                    }
+
+                    @Override
+                    public void onShouldShowRationale(List<String> deniedPermission) {
+
+                    }
+                });
+
             }
 
             @Override

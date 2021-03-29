@@ -36,7 +36,7 @@ public class StatusBarUtils {
         if (resourceId > 0) {
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
-        Log.e("getStatusBarHeight", result + "");
+        //Log.e("getStatusBarHeight", result + "");
         return result;
     }
 

@@ -17,7 +17,7 @@
     <color name="purple_200">#FFBB86FC</color>
     <!--light color-->
     <color name="green">#37DC94</color>
-    <color name="bule">#268AFF</color>
+    <color name="blue">#268AFF</color>
     <color name="red">#FA5C65</color>
     <color name="orange">#FD9A28</color>
 
@@ -28,6 +28,22 @@
     <color name="yellow">#ffc928</color>
     <color name="pink">#ffa3b2</color>
     <color name="gray_in">#979797</color>
+
+    <color name="color1">#38D1DC</color>
+    <color name="color2">#387FDC</color>
+    <color name="color3">#4338DC</color>
+    <color name="color4">#9538DC</color>
+    <color name="color5">#DC38D1</color>
+    <color name="color6">#DC387F</color>
+    <color name="color7">#DC4338</color>
+    <color name="color8">#DC9538</color>
+    <color name="color9">#D1DC38</color>
+    <color name="color10">#7FDC38</color>
+    <color name="color11">#38DC43</color>
+    <color name="color12">#6CE5B0</color>
+    <color name="color13">#A0EECC</color>
+    <color name="color14">#E56CA0</color>
+    <color name="color15">#EEA0C2</color>
 
     <color name="transparent">#00000000</color>
 </resources>

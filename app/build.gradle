@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.android.tallybook"
-        minSdkVersion 16
+        minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
         versionName "0.1.0.10"
@@ -41,6 +41,8 @@ dependencies {
     /* use third-party sdk */
     implementation 'cat.ereza:customactivityoncrash:2.2.0'
     implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+    implementation 'com.github.lihangleo2:ChartView:1.0.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

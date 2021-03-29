@@ -66,7 +66,6 @@ public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
         //StatusBarUtils.with(this).setStatuImmersive();
         //StatusBarUtils.setStyleBlack(this);
         StatusBarUtils.MIUISetStatusBarLightMode(getWindow(),true);
-
         getContract().switchFragment(fragments,lastfragment,0);
         getSupportFragmentManager().beginTransaction().replace(R.id.home_layout,mainFragment).show(mainFragment).commit();
     }

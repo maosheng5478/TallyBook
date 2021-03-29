@@ -4,10 +4,11 @@ public interface IFMy {
     interface V{
 
     }
-    interface M{
+
+    interface P{
 
     }
-    interface P{
+    interface M{
 
     }
 }

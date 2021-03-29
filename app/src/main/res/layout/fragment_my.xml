@@ -20,18 +20,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
                 android:src="@drawable/ic_setting"
-                android:layout_marginRight="@dimen/dp15"
                 android:id="@+id/fmy_iv_setting"
                 android:layout_marginEnd="@dimen/dp15" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/fmy_iv_setting"
                 android:src="@drawable/ic_notification"
                 android:id="@+id/fmy_iv_notification"
-                android:layout_marginRight="@dimen/dp15"
                 android:layout_toStartOf="@+id/fmy_iv_setting"
                 android:layout_marginEnd="@dimen/dp15" />
 
@@ -66,9 +62,7 @@
                         android:id="@+id/fmy_tv_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp10"
                         android:layout_marginTop="@dimen/dp10"
-                        android:layout_toRightOf="@id/fmy_iv_headportrait"
                         android:text="@string/username"
                         android:textSize="@dimen/dp16"
                         android:textColor="@color/black"
@@ -80,9 +74,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/fmy_tv_name"
-                        android:layout_marginLeft="@dimen/dp10"
                         android:layout_marginTop="@dimen/dp10"
-                        android:layout_toRightOf="@id/fmy_iv_headportrait"
                         android:text="积土成山，聚沙成塔，坚持记账的第x天"
                         android:textSize="@dimen/dp12"
                         android:textColor="@color/gray_in"
@@ -352,9 +344,7 @@
                     <ImageView
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
-                        android:layout_marginLeft="@dimen/dp5"
                         android:layout_marginTop="@dimen/dp10"
-                        android:layout_toRightOf="@id/fmy_tv_assets"
                         android:layout_toEndOf="@id/fmy_tv_assets"
                         android:layout_marginStart="@dimen/dp5"
                         android:src="@drawable/ic_see"
@@ -396,7 +386,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp10"
                             android:text="@string/zero"
                             android:textColor="@color/black"
                             android:id="@+id/fmy_tv_money2"
@@ -407,14 +396,12 @@
                             android:layout_height="wrap_content"
                             android:text="@string/totalliabkikties"
                             android:id="@+id/fmy_tv_totaliabkikties"
-                            android:layout_marginLeft="@dimen/dp60"
                             android:layout_marginStart="@dimen/dp60"
                             android:textSize="@dimen/dp12"
                             android:textColor="@color/gray_in" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp10"
                             android:text="@string/zero"
                             android:textColor="@color/black"
                             android:id="@+id/fmy_tv_money3"
@@ -432,7 +419,6 @@
                         android:layout_width="4dp"
                         android:layout_height="match_parent"
                         android:layout_marginStart="@dimen/dp5"
-                        android:layout_marginLeft="@dimen/dp5"
                         android:layout_marginTop="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
                         android:background="@drawable/view_green_roun" />
@@ -443,7 +429,6 @@
                         android:id="@+id/fmy_tv_function"
                         android:textSize="@dimen/dp12"
                         android:textColor="@color/gray_in"
-                        android:layout_marginLeft="@dimen/dp5"
                         android:layout_marginStart="@dimen/dp5" />
                 </LinearLayout>
 
@@ -483,7 +468,6 @@
                             android:layout_width="@dimen/dp50"
                             android:layout_height="@dimen/dp30"
                             android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             app:sb_background="#ddd"
                             app:sb_checked="true"
@@ -550,7 +534,6 @@
                         android:layout_height="wrap_content"
                         android:text="@string/individualization"
                         android:id="@+id/fmy_tv_individualization"
-                        android:layout_marginLeft="@dimen/dp5"
                         android:layout_marginStart="@dimen/dp5"
                         android:textSize="@dimen/dp12"
                         android:textColor="@color/gray_in"
@@ -579,7 +562,6 @@
                         android:id="@+id/right_arrow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
                         android:layout_centerInParent="true"
 
                         android:background="@drawable/ic_right"

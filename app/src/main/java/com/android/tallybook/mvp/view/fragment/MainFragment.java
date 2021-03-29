@@ -15,8 +15,11 @@ import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.iFragment.IFMain;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MainFragmentPresenter;
+import com.android.tallybook.mvp.view.SearchAcivity;
+import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.LogUtils;
 import com.android.tallybook.utils.ToastUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +28,12 @@ public class MainFragment extends BaseMVPFragment<MainFragmentPresenter, IFMain.
 
     private TextView fmain_tv_search;
     private TextView fmain_iv_nodata;
-    private RelativeLayout fmain_layout_r1;
+    private FloatingActionButton fmain_fab_addbill;
     private RelativeLayout fmain_layout_count;
     private ListViewForScrollView fmain_lvfsv_list;
-    private ScrollView fmain_sv_page;
+    //private ScrollView fmain_sv_page;
+    //private RelativeLayout fmain_layout_r1;
+
 
     private BillsListViewAdapter adapter;
     private static List<BillBean> billBeans = new ArrayList<>();
@@ -50,17 +55,28 @@ public class MainFragment extends BaseMVPFragment<MainFragmentPresenter, IFMain.
 
     @Override
     public void initView() {
+        //fmain_layout_r1 = getActivity().findViewById(R.id.fmain_layout_r1);
+        //fmain_sv_page = getActivity().findViewById(R.id.fmain_sv_page);
+
        fmain_tv_search = getActivity().findViewById(R.id.fmain_tv_search);
        fmain_iv_nodata = getActivity().findViewById(R.id.fmain_iv_nodata);
-       fmain_layout_r1 = getActivity().findViewById(R.id.fmain_layout_r1);
        fmain_layout_count = getActivity().findViewById(R.id.fmain_layout_count);
        fmain_lvfsv_list = getActivity().findViewById(R.id.fmain_lvfsv_list);
-       fmain_sv_page = getActivity().findViewById(R.id.fmain_sv_page);
-
+       fmain_fab_addbill = getActivity().findViewById(R.id.fmain_fab_addbill);
     }
 
     @Override
     public void initListener() {
+        fmain_tv_search.setOnClickListener(v -> {
+            //search special data
+            ActivityUtils.go(getContext(), SearchAcivity.class);
+        });
+        fmain_fab_addbill.setOnClickListener(v -> {
+            //jump to add data page
+        });
+        fmain_layout_count.setOnClickListener(v -> {
+            //set change year`s or mouth`s data
+        });
 
     }
 

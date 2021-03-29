@@ -51,6 +51,7 @@ public class BillsListViewAdapter extends BaseAdapter {
             view = View.inflate(context,R.layout.list_view_bills,null);
             //view = LayoutInflater.from(context).inflate(R.layout.list_view_bills,null);
             viewHolder = new ViewHolder();
+            viewHolder.list_bills_tv_id = view.findViewById(R.id.list_bills_tv_id);
             viewHolder.list_bills_iv_infor = view.findViewById(R.id.list_bills_iv_infor);
             viewHolder.list_bills_layout_img = view.findViewById(R.id.list_bills_layout_img);
             viewHolder.list_bills_tv_class = view.findViewById(R.id.list_bills_tv_class);
@@ -61,17 +62,19 @@ public class BillsListViewAdapter extends BaseAdapter {
             view = convertView;
             viewHolder =(ViewHolder) view.getTag();
         }
+
         viewHolder.list_bills_layout_img.setFillColor(context.getResources().getColor(R.color.green));
         viewHolder.list_bills_iv_infor.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_fork));
         viewHolder.list_bills_tv_class.setText(bean.getBillname());
-        LogUtils.d("logg__________",bean.getCost());
         viewHolder.list_bills_tv_explantion.setText(bean.getRemarks());
         viewHolder.list_bills_tv_money.setText(bean.getCost());
+        viewHolder.list_bills_tv_id.setText(bean.getId()+"");
         return view;
     }
 }
 class ViewHolder{
 
+    TextView list_bills_tv_id;
     RoundView list_bills_layout_img;
     ImageView list_bills_iv_infor;
     TextView list_bills_tv_explantion;

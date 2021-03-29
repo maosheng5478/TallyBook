@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
-import com.android.tallybook.customView.PermissionFragment;
-import com.android.tallybook.customView.PermissionListener;
+import com.android.tallybook.customView.permission.PermissionFragment;
+import com.android.tallybook.customView.permission.PermissionListener;
 
 
 /**

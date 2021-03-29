@@ -59,6 +59,7 @@ public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.
         StatusBarUtils.setStyleBlack(this);
         wel_iv_appicon.setImageDrawable(APPUtils.getAppIcon());
         wel_tv_vsname.setText("版本号："+APPUtils.getvsname(this));
+        getContract().EntetrJudge();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.android.tallybook.customView;
+package com.android.tallybook.customView.permission;
 
 import java.util.List;
 

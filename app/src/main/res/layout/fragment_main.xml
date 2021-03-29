@@ -175,5 +175,6 @@
         app:maxImageSize="@dimen/dp55"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/dp16" />
+        android:layout_marginEnd="@dimen/dp16"
+        android:id="@+id/fmain_fab_addbill"/>
 </RelativeLayout>
