@@ -62,7 +62,8 @@
         <com.android.tallybook.customView.ListViewForScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fincome_lfs"/>
+            android:id="@+id/fincome_lfs"
+            android:divider="#eee"/>
 
     </LinearLayout>
 
