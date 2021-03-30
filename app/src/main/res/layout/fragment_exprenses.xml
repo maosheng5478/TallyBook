@@ -12,7 +12,8 @@
         android:background="@drawable/layout_round_no">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/fexp_rl_sta">
             <com.lihang.chart.ChartCircleView
                 android:id="@+id/fexp_ccv"
                 android:layout_width="wrap_content"
@@ -35,9 +36,33 @@
                 android:textColor="@color/gray_in"
                 android:textSize="12sp"/>
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/fexp_ll_nodata"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_nodata"
+                android:layout_marginTop="@dimen/dp100"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nodata"
+                android:textColor="#999"
+                android:layout_marginTop="@dimen/dp20"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp4"
+            android:background="#60CCCCCC"
+            android:id="@+id/fexp_v_line"
+            />
         <com.android.tallybook.customView.ListViewForScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/fincome_lfs"/>
+            android:id="@+id/fexp_lfs"/>
     </LinearLayout>
 </LinearLayout>

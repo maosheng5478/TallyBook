@@ -43,4 +43,5 @@
     <string name="remain">/ 结余</string>
     <string name="total_exp">总支出</string>
     <string name="total_income">总收入</string>
+    <string name="nodata">暂无数据</string>
 </resources>

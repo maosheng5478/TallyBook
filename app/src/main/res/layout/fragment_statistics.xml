@@ -35,11 +35,11 @@
     </RelativeLayout>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:fillViewport="true">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="@dimen/dp17"
             android:layout_marginRight="@dimen/dp17">
@@ -112,11 +112,47 @@
                 >
 
             </com.google.android.material.tabs.TabLayout>
-            <com.android.tallybook.customView.ViewPageForScrollView
-                android:id="@+id/fsta_vp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="3dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp4"
+                    android:background="#20CCCCCC"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp4"
+                    android:background="#25CCCCCC"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp4"
+                    android:background="#30CCCCCC"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_round_no"
+                android:layout_marginLeft="@dimen/dp2"
+                android:layout_marginRight="@dimen/dp2"
+                android:orientation="vertical"
+                 >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp4"
+                    android:background="#ccc"
+                    />
+                <com.android.tallybook.customView.ViewPageForScrollView
+                    android:id="@+id/fsta_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   />
+            </LinearLayout>
+
 
 
         </LinearLayout>

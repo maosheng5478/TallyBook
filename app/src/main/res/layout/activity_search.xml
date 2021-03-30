@@ -27,9 +27,9 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/dp15"
             android:drawablePadding="@dimen/dp15"
-            android:paddingLeft="@dimen/dp15"
+            android:paddingStart="@dimen/dp15"
+            android:paddingEnd="@dimen/dp15"
             android:background="@drawable/btn_round_gary"
-            android:drawableLeft="@drawable/ic_search"
             android:id="@+id/search_et_key"
             android:singleLine="true"/>
         <TextView
