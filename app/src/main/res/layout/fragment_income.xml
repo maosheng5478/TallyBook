@@ -63,7 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fincome_lfs"
-            android:divider="#eee"/>
+            android:divider="#eee"
+            android:dividerHeight="0.5dp"/>
 
     </LinearLayout>
 
