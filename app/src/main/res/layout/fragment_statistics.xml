@@ -109,6 +109,8 @@
                 app:tabIndicatorHeight="@dimen/dp2"
                 app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
                 app:tabTextColor="#555"
+                app:tabBackground="@null"
+                app:tabRippleColor="@null"
                 >
 
             </com.google.android.material.tabs.TabLayout>
