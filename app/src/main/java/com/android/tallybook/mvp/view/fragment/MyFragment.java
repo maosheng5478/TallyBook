@@ -1,18 +1,21 @@
 package com.android.tallybook.mvp.view.fragment;
 
 import android.annotation.SuppressLint;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.tallybook.MyApplication;
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPFragment;
+import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.mvp.iFragment.IFMy;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MyFragmentPresenter;
+import com.android.tallybook.utils.SharePreferenceUtils;
 import com.suke.widget.SwitchButton;
 
-public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
+public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
 
     private ImageView fmy_iv_setting;
     private ImageView fmy_iv_notification;
@@ -39,6 +42,9 @@ public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
     private SwitchButton fmy_switch_button_1;
     private SwitchButton fmy_switch_button_2;
     private RelativeLayout fmy_rl_preferences;
+    private RelativeLayout fmy_rl_jzc;
+
+    private Boolean seeData = (Boolean) SharePreferenceUtils.get(MyApplication.getContext(),"seeData",true);
 
     @Override
     public IFMy.V getContract() {
@@ -72,8 +78,10 @@ public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
         fmy_switch_button_1 = getActivity().findViewById(R.id.fmy_switch_button_1);
         fmy_switch_button_2 = getActivity().findViewById(R.id.fmy_switch_button_2);
         fmy_rl_preferences = getActivity().findViewById(R.id.fmy_rl_preferences);
+        fmy_rl_jzc = getActivity().findViewById(R.id.fmy_rl_jzc);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void initListener() {
         fmy_rl_preferences.setOnClickListener(v -> {
@@ -84,6 +92,25 @@ public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
         });
         fmy_iv_notification.setOnClickListener(v -> {
             //jump to _notification
+        });
+        fmy_switch_button_1.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
+                if (isChecked){
+                    fmy_rl_jzc.setVisibility(View.VISIBLE);
+                }else {
+                    fmy_rl_jzc.setVisibility(View.GONE);
+                }
+            }
+        });
+        fmy_iv_seemoney.setOnClickListener(v -> {
+            if (seeData){
+                seeData = false;
+                fmy_iv_seemoney.setImageDrawable(getResources().getDrawable(R.drawable.ic_no_see,null));
+            }else {
+                seeData = true;
+                fmy_iv_seemoney.setImageDrawable(getResources().getDrawable(R.drawable.ic_see,null));
+            }
         });
     }
 
@@ -96,6 +123,12 @@ public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
     @Override
     public void initData() {
         fmy_iv_headportrait.setImageDrawable(getResources().getDrawable(R.drawable.ic_head));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharePreferenceUtils.put(getContext(),"seeData",seeData);
     }
 
     @Override
@@ -112,4 +145,5 @@ public class MyFragment extends BaseMVPFragment<MyFragmentPresenter, IFMy.V> {
     public void destroy() {
 
     }
+
 }

@@ -1,13 +1,10 @@
 package com.android.tallybook.mvp.view.fragment;
 
 import android.annotation.SuppressLint;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,24 +14,16 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.FragmentViewPageAdapter;
-import com.android.tallybook.baseMVP.BaseMVPFragment;
-import com.android.tallybook.bean.DataItem;
+import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.customView.discView.DiscView;
 import com.android.tallybook.mvp.iFragment.IFStatistical;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.StatisticsFragmentPresenter;
-import com.android.tallybook.utils.LogUtils;
-import com.android.tallybook.utils.TabLayoutUtils;
-import com.android.tallybook.utils.WeakHandler;
 import com.google.android.material.tabs.TabLayout;
-import com.lihang.chart.ChartCircleView;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
-
-public class StatisticsFragment extends BaseMVPFragment<StatisticsFragmentPresenter, IFStatistical.V> {
+public class StatisticsFragment extends BaseFragment<StatisticsFragmentPresenter, IFStatistical.V> {
 
     private DiscView fsta_dv;
     private TabLayout fsta_tl;

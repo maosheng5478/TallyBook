@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.mvp.iFragment.IFExprenses;
 import com.android.tallybook.mvp.model.fragmentModel.ExprensesFragmentModel;
@@ -15,7 +15,7 @@ import com.lihang.chart.ChartCircleView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExprensesFragmentPresenter extends BaseMVPPresenter<ExprensesFragment, ExprensesFragmentModel, IFExprenses.P> {
+public class ExprensesFragmentPresenter extends BasePresenter<ExprensesFragment, ExprensesFragmentModel, IFExprenses.P> {
     @Override
     public ExprensesFragmentModel getModelInstence() {
         return new ExprensesFragmentModel(this);

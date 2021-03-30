@@ -1,12 +1,12 @@
-package com.android.tallybook.baseMVP;
+package com.android.tallybook.base;
 
-public abstract class BaseMVPPresenter<V extends BaseView,M extends BaseMVPModel,CONTRACT> extends SuperBase<CONTRACT> {
+public abstract class BasePresenter<V extends BaseView,M extends BaseModel,CONTRACT> extends SuperBase<CONTRACT> {
 
     public V mView;
 
     public M mModel;
 
-    public BaseMVPPresenter() {
+    public BasePresenter() {
         this.mModel = getModelInstence();
     }
 

@@ -2,11 +2,11 @@ package com.android.tallybook.mvp.view;
 
 import android.view.View;
 
-import com.android.tallybook.baseMVP.BaseMVPActivity;
+import com.android.tallybook.base.BaseActivity;
 import com.android.tallybook.mvp.ILogin;
 import com.android.tallybook.mvp.presenter.LoginPresenter;
 
-public class LoginActivity extends BaseMVPActivity<LoginPresenter, ILogin.V> {
+public class LoginActivity extends BaseActivity<LoginPresenter, ILogin.V> {
     @Override
     public ILogin.V getContract() {
         return null;

@@ -30,7 +30,8 @@
         </activity>
 
         <activity android:name=".mvp.view.HomeActivity"
-            android:theme="@style/dark">
+            android:theme="@style/dark"
+            android:launchMode="singleInstance">
 
         </activity>
         <activity android:name=".mvp.view.LoginActivity">

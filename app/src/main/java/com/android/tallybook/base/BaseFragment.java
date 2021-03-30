@@ -1,4 +1,4 @@
-package com.android.tallybook.baseMVP;
+package com.android.tallybook.base;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -18,7 +18,7 @@ import androidx.fragment.app.Fragment;
 
 import com.android.tallybook.R;
 
-public abstract class BaseMVPFragment <P extends BaseMVPPresenter,CONTRACT> extends Fragment implements BaseView<P>{
+public abstract class BaseFragment<P extends BasePresenter,CONTRACT> extends Fragment implements BaseView<P>{
 
     public P mPresenter;
 

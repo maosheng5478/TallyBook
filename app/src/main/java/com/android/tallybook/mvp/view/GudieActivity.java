@@ -10,7 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.GudieViewPagerAdapter;
-import com.android.tallybook.baseMVP.BaseMVPActivity;
+import com.android.tallybook.base.BaseActivity;
 import com.android.tallybook.mvp.IGuide;
 import com.android.tallybook.mvp.presenter.GuidePresenter;
 import com.android.tallybook.utils.StatusBarUtils;
@@ -18,7 +18,7 @@ import com.android.tallybook.utils.ToastUtils;
 
 import java.util.ArrayList;
 
-public class GudieActivity extends BaseMVPActivity<GuidePresenter, IGuide.V> implements ViewPager.OnPageChangeListener{
+public class GudieActivity extends BaseActivity<GuidePresenter, IGuide.V> implements ViewPager.OnPageChangeListener{
 
     private ViewPager gudie_vp;
     private Button gudie_btn_begin;

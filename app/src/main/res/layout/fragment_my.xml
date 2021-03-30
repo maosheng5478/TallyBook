@@ -29,7 +29,7 @@
                 android:src="@drawable/ic_news"
                 android:id="@+id/fmy_iv_notification"
                 android:layout_toStartOf="@+id/fmy_iv_setting"
-                android:layout_marginEnd="@dimen/dp15" />
+                android:layout_marginEnd="@dimen/dp25" />
 
         </RelativeLayout>
         <ScrollView
@@ -46,7 +46,6 @@
                 >
                 <RelativeLayout
                     android:id="@+id/my_rl_user"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     >
@@ -101,9 +100,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/layout_round_no"
-                    android:layout_marginTop="@dimen/dp10"
-                    android:paddingLeft="@dimen/dp10"
-                    android:paddingRight="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:paddingStart="@dimen/dp10"
+                    android:paddingEnd="@dimen/dp15"
                     android:paddingTop="@dimen/dp5"
                     android:paddingBottom="@dimen/dp15">
                     <RelativeLayout
@@ -184,7 +183,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_lead"
                                     android:text="@string/out_data"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
@@ -197,7 +196,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_export"
                                     android:text="@string/in_data"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
@@ -210,7 +209,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_password"
                                     android:text="@string/own_pwd"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
@@ -223,7 +222,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_help"
                                     android:text="@string/help"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                         </RelativeLayout>
@@ -233,7 +232,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:id="@+id/fmy_ll_nei3"
-                            android:layout_marginTop="@dimen/dp15"
+                            android:layout_marginTop="@dimen/dp20"
                             android:layout_below="@+id/fmy_ll_nei2">
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -293,7 +292,7 @@
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_parts"
                                     android:text="@string/parts"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
@@ -309,7 +308,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:text="@string/invite"
                                     android:textColor="@color/black"
-                                    android:textSize="@dimen/dp12" />
+                                    android:textSize="11sp" />
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -319,7 +318,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/parts"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:visibility="invisible"
                                     android:layout_centerInParent="true"/>
@@ -333,7 +332,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/parts"
                                     android:visibility="invisible"
-                                    android:textSize="@dimen/dp12"
+                                    android:textSize="11sp"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
@@ -350,7 +349,8 @@
                     android:paddingLeft="@dimen/dp17"
                     android:paddingRight="@dimen/dp17"
                     android:paddingTop="@dimen/dp5"
-                    android:paddingBottom="@dimen/dp5">
+                    android:paddingBottom="@dimen/dp5"
+                    android:id="@+id/fmy_rl_jzc">
                     <ImageView
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
@@ -421,8 +421,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp15"
-                    android:layout_marginBottom="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp17"
+                    android:layout_marginBottom="@dimen/dp10"
                     android:orientation="horizontal">
 
                     <View
@@ -527,8 +527,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp15"
-                    android:layout_marginBottom="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp17"
+                    android:layout_marginBottom="@dimen/dp10"
                     android:orientation="horizontal">
 
                     <View

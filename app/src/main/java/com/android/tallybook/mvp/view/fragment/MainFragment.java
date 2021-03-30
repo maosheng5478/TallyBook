@@ -5,26 +5,23 @@ import android.text.SpannableString;
 import android.text.style.ImageSpan;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.BillsListViewAdapter;
-import com.android.tallybook.baseMVP.BaseMVPFragment;
+import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.iFragment.IFMain;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MainFragmentPresenter;
 import com.android.tallybook.mvp.view.SearchAcivity;
 import com.android.tallybook.utils.ActivityUtils;
-import com.android.tallybook.utils.LogUtils;
-import com.android.tallybook.utils.ToastUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainFragment extends BaseMVPFragment<MainFragmentPresenter, IFMain.V> {
+public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> {
 
     private TextView fmain_tv_search;
     private TextView fmain_iv_nodata;

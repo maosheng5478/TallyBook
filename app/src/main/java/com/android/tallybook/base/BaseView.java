@@ -1,4 +1,4 @@
-package com.android.tallybook.baseMVP;
+package com.android.tallybook.base;
 
 import android.app.Dialog;
 import android.content.Context;

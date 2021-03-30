@@ -1,4 +1,4 @@
-package com.android.tallybook.baseMVP;
+package com.android.tallybook.base;
 
 public abstract class SuperBase<CONTRACT>{
 

@@ -1,14 +1,9 @@
 package com.android.tallybook.adapter;
 
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import com.android.tallybook.baseMVP.BaseMVPFragment;
-import com.android.tallybook.utils.LogUtils;
 
 import java.util.List;
 

@@ -1,23 +1,21 @@
  package com.android.tallybook.mvp.presenter;
 
-import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.customView.permission.PermissionListener;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.model.WelcomeModel;
 import com.android.tallybook.mvp.view.GudieActivity;
 import com.android.tallybook.mvp.view.HomeActivity;
-import com.android.tallybook.mvp.view.LoginActivity;
 import com.android.tallybook.mvp.view.WelcomeActivity;
 import com.android.tallybook.utils.APPUtils;
 import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.PermissionUtil;
 import com.android.tallybook.utils.SharePreferenceUtils;
-import com.android.tallybook.utils.ToastUtils;
 import com.android.tallybook.utils.WeakHandler;
 
 import java.util.List;
 
- public class WelcomePresenter extends BaseMVPPresenter<WelcomeActivity, WelcomeModel, IWelcome.P> {
+ public class WelcomePresenter extends BasePresenter<WelcomeActivity, WelcomeModel, IWelcome.P> {
     @Override
     public WelcomeModel getModelInstence() {
         return new WelcomeModel(this);

@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.mvp.IGuide;
 import com.android.tallybook.mvp.model.GuideModel;
 import com.android.tallybook.mvp.view.GudieActivity;
@@ -17,7 +17,7 @@ import com.android.tallybook.utils.WeakHandler;
 
 import java.util.ArrayList;
 
-public class GuidePresenter extends BaseMVPPresenter<GudieActivity, GuideModel, IGuide.P> {
+public class GuidePresenter extends BasePresenter<GudieActivity, GuideModel, IGuide.P> {
     @Override
     public GuideModel getModelInstence() {
         return new GuideModel(this);

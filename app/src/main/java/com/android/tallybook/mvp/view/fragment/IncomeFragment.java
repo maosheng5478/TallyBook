@@ -6,7 +6,7 @@ import android.widget.RelativeLayout;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.BillsListViewAdapter;
-import com.android.tallybook.baseMVP.BaseMVPFragment;
+import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.iFragment.IFIncome;
@@ -16,7 +16,7 @@ import com.lihang.chart.ChartCircleView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IncomeFragment extends BaseMVPFragment<IncomeFragmentPresenter, IFIncome.V> {
+public class IncomeFragment extends BaseFragment<IncomeFragmentPresenter, IFIncome.V> {
 
     private ChartCircleView fincome_ccv;
     private ListViewForScrollView fincome_lvfsv;

@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.BillsListViewAdapter;
-import com.android.tallybook.baseMVP.BaseMVPActivity;
+import com.android.tallybook.base.BaseActivity;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.ISearch;
@@ -23,7 +23,7 @@ import com.android.tallybook.utils.StatusBarUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchAcivity extends BaseMVPActivity<SearchPresenter, ISearch.V> {
+public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
 
     private EditText search_et_key;
     private TextView search_tv_cancel;

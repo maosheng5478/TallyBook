@@ -4,12 +4,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.mvp.IHome;
 import com.android.tallybook.mvp.model.HomeModel;
 import com.android.tallybook.mvp.view.HomeActivity;
 
-public class HomePresenter extends BaseMVPPresenter<HomeActivity, HomeModel, IHome.P> {
+public class HomePresenter extends BasePresenter<HomeActivity, HomeModel, IHome.P> {
     @Override
     public HomeModel getModelInstence() {
         return new HomeModel(this);

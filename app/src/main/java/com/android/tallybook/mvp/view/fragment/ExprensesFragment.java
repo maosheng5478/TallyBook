@@ -6,19 +6,17 @@ import android.widget.RelativeLayout;
 
 import com.android.tallybook.R;
 import com.android.tallybook.adapter.BillsListViewAdapter;
-import com.android.tallybook.baseMVP.BaseMVPFragment;
+import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.iFragment.IFExprenses;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.ExprensesFragmentPresenter;
-import com.android.tallybook.utils.LogUtils;
-import com.lihang.chart.ChartCircleItem;
 import com.lihang.chart.ChartCircleView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExprensesFragment extends BaseMVPFragment<ExprensesFragmentPresenter, IFExprenses.V> {
+public class ExprensesFragment extends BaseFragment<ExprensesFragmentPresenter, IFExprenses.V> {
 
     private ChartCircleView fexp_ccv;
     private LinearLayout fexp_ll_nodata;

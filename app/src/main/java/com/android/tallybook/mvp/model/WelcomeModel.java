@@ -4,13 +4,13 @@ import android.content.Context;
 
 import com.android.tallybook.MyApplication;
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPModel;
+import com.android.tallybook.base.BaseModel;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.presenter.WelcomePresenter;
 import com.android.tallybook.sqlite.dao.UserLoginDao;
 import com.android.tallybook.utils.SharePreferenceUtils;
 
-public class WelcomeModel extends BaseMVPModel<WelcomePresenter, IWelcome.M> {
+public class WelcomeModel extends BaseModel<WelcomePresenter, IWelcome.M> {
 
     private final Context context = MyApplication.getContext();
     private UserLoginDao dao;

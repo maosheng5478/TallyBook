@@ -9,13 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPActivity;
+import com.android.tallybook.base.BaseActivity;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.presenter.WelcomePresenter;
 import com.android.tallybook.utils.APPUtils;
 import com.android.tallybook.utils.StatusBarUtils;
 
-public class WelcomeActivity extends BaseMVPActivity<WelcomePresenter, IWelcome.V> {
+public class WelcomeActivity extends BaseActivity<WelcomePresenter, IWelcome.V> {
 
     private TextView wel_tv_vsname;
     private ImageView wel_iv_appicon;

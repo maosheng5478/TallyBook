@@ -3,7 +3,7 @@ package com.android.tallybook.mvp.model.fragmentModel;
 import android.content.Context;
 
 import com.android.tallybook.MyApplication;
-import com.android.tallybook.baseMVP.BaseMVPModel;
+import com.android.tallybook.base.BaseModel;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.mvp.iFragment.IFIncome;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.IncomeFragmentPresenter;
@@ -11,7 +11,7 @@ import com.android.tallybook.sqlite.dao.BillDao;
 
 import java.util.List;
 
-public class IncomeFragmentModel extends BaseMVPModel<IncomeFragmentPresenter, IFIncome.M> {
+public class IncomeFragmentModel extends BaseModel<IncomeFragmentPresenter, IFIncome.M> {
 
     private final Context context = MyApplication.getContext();
     private BillDao dao;

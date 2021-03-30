@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.android.tallybook.R;
-import com.android.tallybook.baseMVP.BaseMVPActivity;
+import com.android.tallybook.base.BaseActivity;
 import com.android.tallybook.mvp.IHome;
 import com.android.tallybook.mvp.presenter.HomePresenter;
 import com.android.tallybook.mvp.view.fragment.MainFragment;
@@ -19,7 +19,7 @@ import com.android.tallybook.utils.StatusBarUtils;
 import com.android.tallybook.utils.ToastUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
+public class HomeActivity extends BaseActivity<HomePresenter, IHome.V> {
 
     private MainFragment mainFragment;
     private MyFragment myFragment;
@@ -122,6 +122,6 @@ public class HomeActivity extends BaseMVPActivity<HomePresenter, IHome.V> {
         if (ToastUtils.onKeyDown(this,keyCode,event)){
             return true;
         }
-        return super.onKeyDown(keyCode, event);
+        return super.onKeyDown(keyCode,event);
     }
 }

@@ -1,4 +1,4 @@
-package com.android.tallybook.baseMVP;
+package com.android.tallybook.base;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.tallybook.R;
 
-public abstract class BaseMVPActivity<P extends BaseMVPPresenter,CONTRACT> extends AppCompatActivity implements BaseView<P>, View.OnClickListener{
+public abstract class BaseActivity<P extends BasePresenter,CONTRACT> extends AppCompatActivity implements BaseView<P>, View.OnClickListener{
 
     public Dialog dialog;
 

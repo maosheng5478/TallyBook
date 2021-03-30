@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.android.tallybook.baseMVP.BaseMVPPresenter;
+import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.mvp.iFragment.IFIncome;
 import com.android.tallybook.mvp.model.fragmentModel.IncomeFragmentModel;
@@ -15,7 +15,7 @@ import com.lihang.chart.ChartCircleView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IncomeFragmentPresenter extends BaseMVPPresenter<IncomeFragment, IncomeFragmentModel, IFIncome.P>{
+public class IncomeFragmentPresenter extends BasePresenter<IncomeFragment, IncomeFragmentModel, IFIncome.P> {
     @Override
     public IncomeFragmentModel getModelInstence() {
         return new IncomeFragmentModel(this);
