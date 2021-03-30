@@ -5,7 +5,6 @@ import android.content.Context;
 import com.android.tallybook.MyApplication;
 import com.android.tallybook.baseMVP.BaseMVPModel;
 import com.android.tallybook.bean.BillBean;
-import com.android.tallybook.customView.discView.DiscView;
 import com.android.tallybook.mvp.iFragment.IFStatistical;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.StatisticsFragmentPresenter;
 import com.android.tallybook.sqlite.dao.BillDao;
@@ -26,15 +25,31 @@ public class StatisticsFragmentModel extends BaseMVPModel<StatisticsFragmentPres
         return new IFStatistical.M() {
 
             @Override
-            public List<BillBean> selectExpenses() {
+            public Double selectExpenses() {
+                double total =0;
                 dao = new BillDao(context);
-                return dao.expenses();
+                List<BillBean> list =dao.expenses();
+                if (list.size() != 0) {
+                    for (int i = 0; i < list.size(); i++) {
+                        total = total+Double.parseDouble(list.get(i).getCost());
+                    }
+                    return total;
+                }
+                return total;
             }
 
             @Override
-            public List<BillBean> selectIncome() {
+            public Double selectIncome() {
+                double total =0;
                 dao = new BillDao(context);
-                return dao.income();
+                List<BillBean> list =dao.income();
+                if (list.size() != 0) {
+                    for (int i = 0; i < list.size(); i++) {
+                        total = total+Integer.parseInt(list.get(i).getCost());
+                    }
+                    return total;
+                }
+                return total;
             }
         };
     }

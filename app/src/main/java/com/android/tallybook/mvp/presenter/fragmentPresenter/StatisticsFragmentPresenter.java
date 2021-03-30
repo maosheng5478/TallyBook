@@ -1,5 +1,7 @@
 package com.android.tallybook.mvp.presenter.fragmentPresenter;
 
+import android.widget.TextView;
+
 import com.android.tallybook.R;
 import com.android.tallybook.baseMVP.BaseMVPPresenter;
 import com.android.tallybook.mvp.iFragment.IFStatistical;
@@ -31,6 +33,17 @@ public class StatisticsFragmentPresenter extends BaseMVPPresenter<StatisticsFrag
                         TabLayoutUtils.setTabLayoutIndicator(fsta_tl,15,15);
                     }
                 });
+            }
+
+            @Override
+            public void setTextViewData(TextView exp, TextView income, TextView remain) {
+                double i_exp,i_income,i_remain;
+                i_exp = mModel.getContract().selectExpenses();
+                i_income = mModel.getContract().selectIncome();
+                i_remain = i_income - i_exp;
+                exp.setText(String.valueOf(i_exp));
+                income.setText(String.valueOf(i_income));
+                remain.setText(String.valueOf(i_remain));
             }
         };
     }

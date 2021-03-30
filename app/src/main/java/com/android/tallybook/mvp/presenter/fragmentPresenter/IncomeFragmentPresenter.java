@@ -65,10 +65,8 @@ public class IncomeFragmentPresenter extends BaseMVPPresenter<IncomeFragment, In
             public void lineShow(View view, boolean b) {
                 if (b){
                     view.setVisibility(View.VISIBLE);
-                    System.out.println("asdhkgasiodgdiasvuigoasluifgdfgsd"+b);
                 }else {
-                    view.setVisibility(View.GONE);
-                    System.out.println("asdhkgasiodgdiasvuigoasluifgdfgsd"+b);
+                    view.setVisibility(View.INVISIBLE);
                 }
             }
         };

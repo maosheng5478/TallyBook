@@ -58,7 +58,7 @@ public class IncomeFragment extends BaseMVPFragment<IncomeFragmentPresenter, IFI
         fincome_lvfsv = getActivity().findViewById(R.id.fincome_lfs);
         fincome_ll_nodata = getActivity().findViewById(R.id.fincome_ll_nodata);
         fincome_rl_sta = getActivity().findViewById(R.id.fincome_rl_sta);
-        fincome_v_line = getActivity().findViewById(R.id.fexp_v_line);
+        fincome_v_line = getActivity().findViewById(R.id.fincome_v_line);
     }
 
     @Override

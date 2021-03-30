@@ -17,16 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/ic_setting"
                 android:id="@+id/fmy_iv_setting"
                 android:layout_marginEnd="@dimen/dp15" />
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_notification"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:src="@drawable/ic_news"
                 android:id="@+id/fmy_iv_notification"
                 android:layout_toStartOf="@+id/fmy_iv_setting"
                 android:layout_marginEnd="@dimen/dp15" />
@@ -55,7 +55,7 @@
                         android:id="@+id/fmy_iv_headportrait"
                         android:layout_width="@dimen/dp60"
                         android:layout_height="@dimen/dp60"
-
+                        android:src="@drawable/ic_head"
                         android:gravity="left" />
 
                     <TextView
@@ -84,12 +84,13 @@
                     <Button
                         android:id="@+id/fmy_btn_member"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/dp40"
                         android:layout_below="@id/fmy_iv_headportrait"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="@dimen/dp10"
-                        android:textSize="@dimen/dp13"
+                        android:textSize="13sp"
                         android:text="@string/openvip"
+                        android:textColor="#666"
                         android:background="@drawable/gradul_green"
                         style="@style/Widget.AppCompat.Button.Borderless"
                         />
@@ -101,10 +102,10 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/layout_round_no"
                     android:layout_marginTop="@dimen/dp10"
-                    android:paddingLeft="@dimen/dp17"
-                    android:paddingRight="@dimen/dp17"
+                    android:paddingLeft="@dimen/dp10"
+                    android:paddingRight="@dimen/dp10"
                     android:paddingTop="@dimen/dp5"
-                    android:paddingBottom="@dimen/dp5">
+                    android:paddingBottom="@dimen/dp15">
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -122,8 +123,9 @@
                                 android:layout_weight="1" >
                                 <ImageView
                                     android:id="@+id/fmy_iv_photo1"
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
+                                    android:src="@drawable/ic_down"
                                     android:layout_centerInParent="true"
                                    />
                             </RelativeLayout>
@@ -132,9 +134,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
                                     android:id="@+id/fmy_iv_photo2"
+                                    android:src="@drawable/ic_up"
                                     android:layout_centerInParent="true"
                                     />
                             </RelativeLayout>
@@ -143,9 +146,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
                                     android:id="@+id/fmy_iv_photo3"
+                                    android:src="@drawable/ic_pwd"
                                     android:layout_centerInParent="true"
                                     />
                             </RelativeLayout>
@@ -154,10 +158,11 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
                                     android:id="@+id/fmy_iv_photo4"
                                     android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_help"
                                     />
                             </RelativeLayout>
 
@@ -167,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:id="@+id/fmy_ll_nei2"
-                            android:layout_marginTop="@dimen/dp15"
+                            android:layout_marginTop="@dimen/dp5"
                             android:layout_below="@+id/fmy_ll_nei1"
                             >
                             <RelativeLayout
@@ -191,7 +196,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_export"
-                                    android:text="@string/out_data"
+                                    android:text="@string/in_data"
                                     android:textSize="@dimen/dp12"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
@@ -204,7 +209,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_password"
-                                    android:text="@string/out_data"
+                                    android:text="@string/own_pwd"
                                     android:textSize="@dimen/dp12"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
@@ -217,7 +222,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_help"
-                                    android:text="@string/out_data"
+                                    android:text="@string/help"
                                     android:textSize="@dimen/dp12"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>
@@ -228,26 +233,28 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:id="@+id/fmy_ll_nei3"
-                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp15"
                             android:layout_below="@+id/fmy_ll_nei2">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
                                     android:id="@+id/fmy_iv_photo5"
-                                    android:layout_centerInParent="true"/>
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_components"/>
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="@dimen/dp30"
+                                    android:layout_height="@dimen/dp30"
                                     android:id="@+id/fmy_iv_photo6"
+                                    android:src="@drawable/ic_share"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
                             <RelativeLayout
@@ -255,8 +262,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
                             <RelativeLayout
@@ -264,8 +271,8 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
                                 <ImageView
-                                    android:layout_width="@dimen/dp35"
-                                    android:layout_height="@dimen/dp35"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
                         </LinearLayout>
@@ -274,7 +281,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:id="@+id/fmy_ll_nei4"
-                            android:layout_marginTop="@dimen/dp15"
+                            android:layout_marginTop="@dimen/dp5"
                             android:layout_below="@+id/fmy_ll_nei3"
                             >
                             <RelativeLayout
@@ -294,14 +301,15 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" >
+
                                 <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
                                     android:id="@+id/fmy_tv_invitation"
-                                    android:text="@string/parts"
-                                    android:textSize="@dimen/dp12"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="@string/invite"
                                     android:textColor="@color/black"
-                                    android:layout_centerInParent="true"/>
+                                    android:textSize="@dimen/dp12" />
                             </RelativeLayout>
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -313,6 +321,7 @@
                                     android:text="@string/parts"
                                     android:textSize="@dimen/dp12"
                                     android:textColor="@color/black"
+                                    android:visibility="invisible"
                                     android:layout_centerInParent="true"/>
                             </RelativeLayout>
                             <RelativeLayout
@@ -323,6 +332,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/parts"
+                                    android:visibility="invisible"
                                     android:textSize="@dimen/dp12"
                                     android:textColor="@color/black"
                                     android:layout_centerInParent="true"/>

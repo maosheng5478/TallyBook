@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -25,7 +26,8 @@
             android:textColor="@color/black"
             android:textSize="@dimen/dp25"
             app:drawableRightCompat="@drawable/ic_pulldown"
-            android:drawablePadding="@dimen/dp7"/>
+            android:drawablePadding="@dimen/dp7"
+            />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,11 +91,12 @@
                         android:id="@+id/fmain_tv_num"/>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="总收入"
+                            android:text="@string/total_income"
                             android:paddingLeft="@dimen/dp7"
                             android:paddingRight="@dimen/dp7"
                             android:textColor="@color/white"
@@ -103,8 +106,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="#666666"
-                            android:textSize="@dimen/dp15"
-                            android:layout_marginLeft="@dimen/dp5"
+                            android:textSize="14sp"
                             android:text="@string/zero"
                             android:layout_marginStart="@dimen/dp5"
                             android:id="@+id/fmain_tv_in"/>
@@ -113,17 +115,16 @@
                             android:layout_height="wrap_content"
                             android:textColor="#666666"
                             android:textSize="@dimen/dp17"
-                            android:layout_marginLeft="@dimen/dp10"
                             android:text="|"
                             android:layout_marginStart="@dimen/dp5" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="总收入"
+                            android:text="@string/total_exp"
                             android:paddingLeft="@dimen/dp7"
                             android:paddingRight="@dimen/dp7"
+                            android:textSize="14sp"
                             android:textColor="@color/white"
-                            android:layout_marginLeft="@dimen/dp5"
                             android:id="@+id/fmain_tv_red"
                             android:background="@drawable/tv_red"
                             android:layout_marginStart="@dimen/dp5" />
@@ -165,15 +166,15 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="@dimen/dp16"
         android:layout_marginBottom="@dimen/dp70"
         android:layout_alignParentBottom="true"
         android:src="@drawable/add_circle"
         android:scaleType="fitXY"
         app:elevation="0dp"
+        app:pressedTranslationZ="0dp"
+        app:rippleColor="@color/transparent"
         app:backgroundTint="@color/transparent"
         app:maxImageSize="@dimen/dp55"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/dp16"
         android:id="@+id/fmain_fab_addbill"/>

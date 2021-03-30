@@ -73,6 +73,7 @@ public class MainFragment extends BaseMVPFragment<MainFragmentPresenter, IFMain.
         });
         fmain_fab_addbill.setOnClickListener(v -> {
             //jump to add data page
+
         });
         fmain_layout_count.setOnClickListener(v -> {
             //set change year`s or mouth`s data

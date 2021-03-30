@@ -1,22 +1,24 @@
 package com.android.tallybook.mvp.iFragment;
 
-import com.android.tallybook.bean.BillBean;
-import com.google.android.material.tabs.TabLayout;
-import com.lihang.chart.ChartCircleView;
+import android.widget.TextView;
 
-import java.util.List;
+import com.google.android.material.tabs.TabLayout;
 
 public interface IFStatistical {
     interface V{
         void tabinit(TabLayout fsta_tl);
+
+        void setTextViewData(TextView exp,TextView income,TextView remain);
     }
     interface P{
         void tabinit(TabLayout fsta_tl);
+
+        void setTextViewData(TextView exp,TextView income,TextView remain);
     }
     interface M{
-        List<BillBean> selectExpenses();
+        Double selectExpenses();
 
-        List<BillBean> selectIncome();
+        Double selectIncome();
     }
 
 }

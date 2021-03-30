@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,9 +37,11 @@ import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CU
 public class StatisticsFragment extends BaseMVPFragment<StatisticsFragmentPresenter, IFStatistical.V> {
 
     private DiscView fsta_dv;
-    private ChartCircleView fsta_ccv;
     private TabLayout fsta_tl;
     private ViewPager fsta_vp;
+    private TextView fsta_exp;
+    private TextView fsta_income;
+    private TextView fsta_remain;
 
     private List<Fragment> fragmentList;
     private FragmentViewPageAdapter adapter;
@@ -50,6 +53,11 @@ public class StatisticsFragment extends BaseMVPFragment<StatisticsFragmentPresen
             @Override
             public void tabinit(TabLayout tabLayout) {
                 mPresenter.getContract().tabinit(tabLayout);
+            }
+
+            @Override
+            public void setTextViewData(TextView exp, TextView income, TextView remain) {
+                mPresenter.getContract().setTextViewData(exp,income,remain);
             }
         };
     }
@@ -63,9 +71,11 @@ public class StatisticsFragment extends BaseMVPFragment<StatisticsFragmentPresen
     @Override
     public void initView() {
         fsta_dv = getActivity().findViewById(R.id.fsta_dv);
-        //fsta_ccv = getActivity().findViewById(R.id.fsta_ccv);
         fsta_tl = getActivity().findViewById(R.id.fsta_tl);
         fsta_vp = getActivity().findViewById(R.id.fsta_vp);
+        fsta_exp = getActivity().findViewById(R.id.fsta_exp);
+        fsta_income = getActivity().findViewById(R.id.fsta_income);
+        fsta_remain = getActivity().findViewById(R.id.fsta_remain);
 
     }
 
@@ -94,6 +104,7 @@ public class StatisticsFragment extends BaseMVPFragment<StatisticsFragmentPresen
         fsta_tl.setupWithViewPager(fsta_vp);
         getContract().tabinit(fsta_tl);
 
+        getContract().setTextViewData(fsta_exp,fsta_income,fsta_remain);
 
     }
     @Override
