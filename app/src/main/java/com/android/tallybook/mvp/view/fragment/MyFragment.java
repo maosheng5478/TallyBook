@@ -44,11 +44,15 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
     private RelativeLayout fmy_rl_preferences;
     private RelativeLayout fmy_rl_jzc;
 
-    private Boolean seeData = (Boolean) SharePreferenceUtils.get(MyApplication.getContext(),"seeData",true);
 
     @Override
     public IFMy.V getContract() {
-        return null;
+        return new IFMy.V() {
+            @Override
+            public void initSeeView(ImageView imageView, TextView tv1, TextView tv2, TextView tv3) {
+                mPresenter.getContract().initSeeView(imageView,tv1,tv2,tv3);
+            }
+        };
     }
 
     @Override
@@ -104,13 +108,7 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
             }
         });
         fmy_iv_seemoney.setOnClickListener(v -> {
-            if (seeData){
-                seeData = false;
-                fmy_iv_seemoney.setImageDrawable(getResources().getDrawable(R.drawable.ic_no_see,null));
-            }else {
-                seeData = true;
-                fmy_iv_seemoney.setImageDrawable(getResources().getDrawable(R.drawable.ic_see,null));
-            }
+            getContract().initSeeView(fmy_iv_seemoney,fmy_tv_money1,fmy_tv_money2,fmy_tv_money3);
         });
     }
 
@@ -123,12 +121,12 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
     @Override
     public void initData() {
         fmy_iv_headportrait.setImageDrawable(getResources().getDrawable(R.drawable.ic_head));
+        getContract().initSeeView(fmy_iv_seemoney,fmy_tv_money1,fmy_tv_money2,fmy_tv_money3);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        SharePreferenceUtils.put(getContext(),"seeData",seeData);
     }
 
     @Override
@@ -138,7 +136,7 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
 
     @Override
     public <ERROR> void responrse(ERROR error, Throwable throwable) {
-
+        //send message to app
     }
 
     @Override

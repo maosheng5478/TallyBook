@@ -28,6 +28,7 @@ public class BillOpenHelper extends SQLiteOpenHelper {
         remarks  备注说明*/
         db.execSQL("insert into bills(billname,cost,flow,time) values('日常','100.00','支出','20210320')");
         db.execSQL("insert into bills(billname,cost,flow,time) values('餐饮','100.22','支出','20210320')");
+        db.execSQL("insert into bills(billname,cost,flow,time) values('工资','200','收入','20210329')");
     }
 
     @Override

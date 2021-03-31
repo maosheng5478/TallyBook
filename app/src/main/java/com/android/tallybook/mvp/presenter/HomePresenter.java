@@ -24,6 +24,7 @@ public class HomePresenter extends BasePresenter<HomeActivity, HomeModel, IHome.
                 transaction.hide(fragments[lastfragment]);//隐藏上个Fragment
                 if(!fragments[index].isAdded()) {
                     transaction.add(R.id.home_layout,fragments[index]);
+                    //fragments[lastfragment].onPause();
 
                 }
                 transaction.show(fragments[index]).commitAllowingStateLoss();

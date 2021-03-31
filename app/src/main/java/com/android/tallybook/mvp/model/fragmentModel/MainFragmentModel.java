@@ -29,6 +29,41 @@ public class MainFragmentModel extends BaseModel<MainFragmentPresenter, IFMain.M
                 List<BillBean> billDaoList = billDao.allBill();
                 mPresenter.getContract().respondDataUpdate(billDaoList);
             }
+
+            @Override
+            public Double selectExpenses() {
+                double total =0;
+                billDao = new BillDao(context);
+                List<BillBean> list =billDao.expenses();
+                if (list.size() != 0) {
+                    for (int i = 0; i < list.size(); i++) {
+                        total = total+Double.parseDouble(list.get(i).getCost());
+                    }
+                    return total;
+                }
+                return total;
+            }
+
+            @Override
+            public Double selectIncome() {
+                double total =0;
+                billDao = new BillDao(context);
+                List<BillBean> list =billDao.income();
+                if (list.size() != 0) {
+                    for (int i = 0; i < list.size(); i++) {
+                        total = total+Integer.parseInt(list.get(i).getCost());
+                    }
+                    return total;
+                }
+                return total;
+            }
+
+            @Override
+            public void deletBill(int i) {
+                billDao = new BillDao(context);
+                int e = billDao.deletBill(i);
+                System.out.println(e);
+            }
         };
     }
 }

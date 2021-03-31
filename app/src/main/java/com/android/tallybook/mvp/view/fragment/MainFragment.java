@@ -16,6 +16,7 @@ import com.android.tallybook.mvp.iFragment.IFMain;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MainFragmentPresenter;
 import com.android.tallybook.mvp.view.SearchAcivity;
 import com.android.tallybook.utils.ActivityUtils;
+import com.android.tallybook.utils.LogUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -28,9 +29,10 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
     private FloatingActionButton fmain_fab_addbill;
     private RelativeLayout fmain_layout_count;
     private ListViewForScrollView fmain_lvfsv_list;
-    //private ScrollView fmain_sv_page;
+    private TextView fmain_tv_num;
+    private TextView fmain_tv_in;
+    private TextView fmain_tv_out;
     //private RelativeLayout fmain_layout_r1;
-
 
     private BillsListViewAdapter adapter;
     private static List<BillBean> billBeans = new ArrayList<>();
@@ -47,19 +49,30 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
             public void respondDataUpdate(List<BillBean> list) {
                 MainFragment.billBeans = list;
             }
+
+            @Override
+            public void initSeeView(TextView tv1, TextView tv2, TextView tv3) {
+                mPresenter.getContract().initSeeView(tv1,tv2,tv3);
+            }
+
+            @Override
+            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans) {
+                mPresenter.getContract().listviewItemClick(listViewForScrollView, billBeans);
+            }
         };
     }
 
     @Override
     public void initView() {
         //fmain_layout_r1 = getActivity().findViewById(R.id.fmain_layout_r1);
-        //fmain_sv_page = getActivity().findViewById(R.id.fmain_sv_page);
-
-       fmain_tv_search = getActivity().findViewById(R.id.fmain_tv_search);
-       fmain_iv_nodata = getActivity().findViewById(R.id.fmain_iv_nodata);
-       fmain_layout_count = getActivity().findViewById(R.id.fmain_layout_count);
-       fmain_lvfsv_list = getActivity().findViewById(R.id.fmain_lvfsv_list);
-       fmain_fab_addbill = getActivity().findViewById(R.id.fmain_fab_addbill);
+        fmain_tv_search = getActivity().findViewById(R.id.fmain_tv_search);
+        fmain_iv_nodata = getActivity().findViewById(R.id.fmain_iv_nodata);
+        fmain_layout_count = getActivity().findViewById(R.id.fmain_layout_count);
+        fmain_lvfsv_list = getActivity().findViewById(R.id.fmain_lvfsv_list);
+        fmain_fab_addbill = getActivity().findViewById(R.id.fmain_fab_addbill);
+        fmain_tv_num = getActivity().findViewById(R.id.fmain_tv_num);
+        fmain_tv_in = getActivity().findViewById(R.id.fmain_tv_in);
+        fmain_tv_out = getActivity().findViewById(R.id.fmain_tv_out);
     }
 
     @Override
@@ -91,13 +104,32 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
         spannableString.setSpan(imgSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         fmain_tv_search.setText(spannableString);
         //初始化账单列表数据
-        getContract().findBillData();
 
 
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        LogUtils.d("Main","onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        LogUtils.d("Main","onStop");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        LogUtils.d("Main","onStart");
+    }
+
+    @Override
     public void onResume() {
+        getContract().findBillData();
+        LogUtils.d("Main","onResume");
         super.onResume();
         if (billBeans.size() != 0){
             fmain_iv_nodata.setVisibility(View.GONE);
@@ -107,6 +139,9 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
 
         adapter = new BillsListViewAdapter(getContext(),billBeans);
         fmain_lvfsv_list.setAdapter(adapter);
+        getContract().listviewItemClick(fmain_lvfsv_list,billBeans );
+
+        getContract().initSeeView(fmain_tv_num,fmain_tv_in,fmain_tv_out);
         adapter.notifyDataSetChanged();
 
     }

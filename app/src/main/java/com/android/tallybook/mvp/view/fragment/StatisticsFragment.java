@@ -18,6 +18,7 @@ import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.customView.discView.DiscView;
 import com.android.tallybook.mvp.iFragment.IFStatistical;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.StatisticsFragmentPresenter;
+import com.android.tallybook.utils.LogUtils;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -96,6 +97,30 @@ public class StatisticsFragment extends BaseFragment<StatisticsFragmentPresenter
         getContract().setTextViewData(fsta_exp,fsta_income,fsta_remain);
 
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        LogUtils.d("Sta","onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        LogUtils.d("Sta","onStop");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        LogUtils.d("Sta","onStart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        LogUtils.d("Sta","onResume");
+    }
+
     @Override
     public StatisticsFragmentPresenter getPresenterInstance() {
         return new StatisticsFragmentPresenter();

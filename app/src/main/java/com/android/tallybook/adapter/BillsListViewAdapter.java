@@ -12,8 +12,10 @@ import android.widget.TextView;
 import com.android.tallybook.R;
 import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.RoundView;
+import com.android.tallybook.utils.DateUtils;
 import com.android.tallybook.utils.LogUtils;
 
+import java.text.ParseException;
 import java.util.List;
 
 public class BillsListViewAdapter extends BaseAdapter {
@@ -63,11 +65,20 @@ public class BillsListViewAdapter extends BaseAdapter {
             viewHolder =(ViewHolder) view.getTag();
         }
 
-        viewHolder.list_bills_layout_img.setFillColor(context.getResources().getColor(R.color.green));
+        viewHolder.list_bills_layout_img.setFillColor(context.getResources().getColor(R.color.green_1));
         viewHolder.list_bills_iv_infor.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_fork));
         viewHolder.list_bills_tv_class.setText(bean.getBillname());
-        viewHolder.list_bills_tv_explantion.setText(bean.getRemarks());
-        viewHolder.list_bills_tv_money.setText(bean.getCost());
+        try {
+            viewHolder.list_bills_tv_explantion.setText(DateUtils.getDateFormat(bean.getTime()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        if (bean.getFlow().equals("收入")){
+            viewHolder.list_bills_tv_money.setText("+"+bean.getCost());
+        }else {
+            viewHolder.list_bills_tv_money.setText("-"+bean.getCost());
+        }
+
         viewHolder.list_bills_tv_id.setText(bean.getId()+"");
         return view;
     }

@@ -80,6 +80,10 @@ public class BillDao {
         return list;
     }
 
+    public int deletBill(int id){
+        return db.delete("bills","id=?",new String[]{String.valueOf(id)});
+    }
+
     public int insertBill(BillBean bean){
         return (int) db.insert("bills",null,adddata(bean));
     }

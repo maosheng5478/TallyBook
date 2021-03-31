@@ -2,13 +2,14 @@ package com.android.tallybook.utils;
 
 import android.annotation.SuppressLint;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtils {
     private static SimpleDateFormat sf;
-    private static SimpleDateFormat sdf;
 
     /**
      * 获取系统时间 格式为："yyyy/MM/dd "
@@ -20,6 +21,34 @@ public class DateUtils {
         return sf.format(d);
     }
 
+    /**
+     * 时间格式转化 20210911为："yyyy-MM-dd "
+     * @param string
+     * @return
+     * @throws ParseException
+     */
+    @SuppressLint("SimpleDateFormat")
+    public static String getDateFormat(String string) throws ParseException {
+        if ("".equals(string)){
+            return "";
+        }
+        DateFormat df = new SimpleDateFormat("yyyyMMdd");
+        Date date = df.parse(string);
+        DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
+        assert date != null;
+        return df2.format(date);
+    }
+    @SuppressLint("SimpleDateFormat")
+    public static String getDateFormatForC(String string) throws ParseException {
+        if ("".equals(string)){
+            return "";
+        }
+        DateFormat df = new SimpleDateFormat("yyyyMMdd");
+        Date date = df.parse(string);
+        DateFormat df2 = new SimpleDateFormat("yyyy年MM月dd日");
+        assert date != null;
+        return df2.format(date);
+    }
     /**
      * 获取系统时间 格式为："yyyy "
      **/

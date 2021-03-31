@@ -83,6 +83,9 @@ public class IncomeFragment extends BaseFragment<IncomeFragmentPresenter, IFInco
     public void onResume() {
         super.onResume();
         getContract().initCircleViewData(fincome_ccv,colors, fincome_rl_sta,fincome_ll_nodata, fincome_v_line);
+        adapter = new BillsListViewAdapter(getContext(),billBeans);
+        fincome_lvfsv.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

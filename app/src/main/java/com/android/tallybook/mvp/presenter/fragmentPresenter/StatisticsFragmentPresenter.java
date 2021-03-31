@@ -1,5 +1,6 @@
 package com.android.tallybook.mvp.presenter.fragmentPresenter;
 
+import android.annotation.SuppressLint;
 import android.widget.TextView;
 
 import com.android.tallybook.base.BasePresenter;
@@ -29,6 +30,7 @@ public class StatisticsFragmentPresenter extends BasePresenter<StatisticsFragmen
                 });
             }
 
+            @SuppressLint("DefaultLocale")
             @Override
             public void setTextViewData(TextView exp, TextView income, TextView remain) {
                 double i_exp,i_income,i_remain;
@@ -37,7 +39,7 @@ public class StatisticsFragmentPresenter extends BasePresenter<StatisticsFragmen
                 i_remain = i_income - i_exp;
                 exp.setText(String.valueOf(i_exp));
                 income.setText(String.valueOf(i_income));
-                remain.setText(String.valueOf(i_remain));
+                remain.setText(String.format("%.2f",i_remain));
             }
         };
     }
