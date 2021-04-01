@@ -12,6 +12,8 @@ import com.android.tallybook.R;
 import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.mvp.iFragment.IFMy;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MyFragmentPresenter;
+import com.android.tallybook.mvp.view.SettingActivity;
+import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.SharePreferenceUtils;
 import com.suke.widget.SwitchButton;
 
@@ -93,6 +95,8 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
         });
         fmy_iv_setting.setOnClickListener(v -> {
             //jump to setting
+            ActivityUtils.go(getContext(), SettingActivity.class);
+            getActivity().overridePendingTransition(R.anim.lr_in, R.anim.lr_out);
         });
         fmy_iv_notification.setOnClickListener(v -> {
             //jump to _notification

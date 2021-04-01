@@ -24,21 +24,24 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".mvp.view.GudieActivity" />
+
         <activity
-            android:name=".mvp.view.GudieActivity"
-           >
-        </activity>
-
-        <activity android:name=".mvp.view.HomeActivity"
+            android:name=".mvp.view.HomeActivity"
             android:theme="@style/dark"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance" />
 
-        </activity>
-        <activity android:name=".mvp.view.LoginActivity">
+        <activity android:name=".mvp.view.LoginActivity" />
 
-        </activity>
-        <activity android:name=".mvp.view.SearchAcivity"
-            android:theme="@style/dark"></activity>
+        <activity
+            android:name=".mvp.view.SearchAcivity"
+            android:theme="@style/dark" />
+
+        <activity android:name=".mvp.view.SettingActivity"
+            android:theme="@style/dark"/>
+
+        <activity android:name=".mvp.view.ClearActivity"
+            android:theme="@style/dark"/>
     </application>
 
 </manifest>

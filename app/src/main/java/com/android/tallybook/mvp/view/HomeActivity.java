@@ -51,6 +51,7 @@ public class HomeActivity extends BaseActivity<HomePresenter, IHome.V> {
 
     }
 
+
     @Override
     public void initListener() {
         bottomNavigationView.setOnNavigationItemSelectedListener(changeFragment);

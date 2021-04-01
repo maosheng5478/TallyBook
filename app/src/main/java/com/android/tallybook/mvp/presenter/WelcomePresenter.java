@@ -1,5 +1,6 @@
  package com.android.tallybook.mvp.presenter;
 
+import com.android.tallybook.R;
 import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.customView.permission.PermissionListener;
 import com.android.tallybook.mvp.IWelcome;
@@ -49,12 +50,16 @@ import java.util.List;
                                     ActivityUtils.go(mView, HomeActivity.class);
                                     //ActivityUtils.go(mView, GudieActivity.class);
                                     mView.finish();
+                                    mView.overridePendingTransition(R.anim.anim_in, R.anim.anim_out);
                                 }else {
                                     ActivityUtils.go(mView, GudieActivity.class);
                                     mView.finish();
+                                    mView.overridePendingTransition(R.anim.anim_in, R.anim.anim_out);
+
                                 }
                             }
                         },1000);
+
                     }
 
                     @Override

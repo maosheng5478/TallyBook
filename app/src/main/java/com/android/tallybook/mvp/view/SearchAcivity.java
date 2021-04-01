@@ -18,6 +18,7 @@ import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.ISearch;
 import com.android.tallybook.mvp.presenter.SearchPresenter;
+import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.StatusBarUtils;
 
 import java.util.ArrayList;
@@ -117,7 +118,9 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.search_tv_cancel:
-                onBackPressed();
+                ActivityUtils.go(SearchAcivity.this,HomeActivity.class);
+                finish();
+                overridePendingTransition(R.anim.lr_in_exit, R.anim.lr_out_exit);
         }
     }
     @SuppressLint("ClickableViewAccessibility")
@@ -163,5 +166,12 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
             }
             return false;
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        ActivityUtils.go(SearchAcivity.this,HomeActivity.class);
+        finish();
+        overridePendingTransition(R.anim.lr_in_exit, R.anim.lr_out_exit);
     }
 }

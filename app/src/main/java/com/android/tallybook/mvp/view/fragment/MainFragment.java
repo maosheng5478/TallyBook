@@ -80,6 +80,7 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
         fmain_tv_search.setOnClickListener(v -> {
             //search special data
             ActivityUtils.go(getContext(), SearchAcivity.class);
+            getActivity().overridePendingTransition(R.anim.lr_in, R.anim.lr_out);
         });
         fmain_fab_addbill.setOnClickListener(v -> {
             //jump to add data page
