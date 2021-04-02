@@ -42,6 +42,12 @@
 
         <activity android:name=".mvp.view.ClearActivity"
             android:theme="@style/dark"/>
+
+        <activity android:name=".mvp.view.PrefenceActivity"
+            android:theme="@style/dark"/>
+
+        <activity android:name=".mvp.view.AddActivity"
+            android:theme="@style/dark"/>
     </application>
 
 </manifest>

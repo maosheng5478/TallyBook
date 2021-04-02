@@ -89,6 +89,10 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
         StatusBarUtils.with(this).setStatuImmersive();
         StatusBarUtils.setStyleBlack(this);
         search_tv_datacount.setText("共找到0笔账单");
+        search_et_key.setFocusable(true);
+        search_et_key.setFocusableInTouchMode(true);
+        search_et_key.requestFocus();
+        search_et_key.setSelection(search_et_key.getText().length());
     }
 
     @SuppressLint("SetTextI18n")

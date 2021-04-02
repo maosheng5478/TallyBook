@@ -31,7 +31,7 @@ public class BillDao {
      */
     public List<BillBean> allBill(){
         List<BillBean> list = new ArrayList<BillBean>();
-        Cursor cursor = db.rawQuery("select * from bills", null);
+        Cursor cursor = db.rawQuery("select * from bills order by time DESC", null);
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
@@ -44,13 +44,15 @@ public class BillDao {
      */
     public List<BillBean> blurredQury(String temp){
         List<BillBean> list = new ArrayList<>();
-        temp = "%"+temp+"%";
+        String sql = "select * from bills where billname like '%"+temp+"%' or cost like '%"+temp
+                +"%' or flow like '%"+temp+"%' or time like '%"+temp+"%'";
         @SuppressLint("Recycle")
-        Cursor cursor = db.rawQuery("select * from bills where billname like '?' or cost like '?' or flow like ? or time like ? or remarks like ?",
-                new String[]{temp,temp,temp});
+        Cursor cursor = db.query(TABLE_NAME,null,"billname like ? or cost like ? or flow like ? or time like ?",
+                new String[]{"%"+temp+"%","%"+temp+"%","%"+temp+"%","%"+temp+"%"},null,null," time DESC");
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
+        System.out.println(list);
         return list;
     }
 
@@ -60,7 +62,7 @@ public class BillDao {
      */
     public List<BillBean> income(){
         List<BillBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from bills where flow = '收入'", null);
+        Cursor cursor = db.rawQuery("select * from bills where flow = '收入' order by cost DESC", null);
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
@@ -73,7 +75,7 @@ public class BillDao {
      */
     public List<BillBean> expenses(){
         List<BillBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from bills where flow = '支出'", null);
+        Cursor cursor = db.rawQuery("select * from bills where flow = '支出' order by cost DESC", null);
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }

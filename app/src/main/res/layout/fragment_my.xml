@@ -483,7 +483,7 @@
                             app:sb_checked="true"
                             app:sb_show_indicator="false"
                             app:sb_uncheck_color="#ddd"
-                            app:sb_checked_color="@color/green"/>
+                            app:sb_checked_color="@color/green_1"/>
 
                     </RelativeLayout>
                     <RelativeLayout
@@ -519,7 +519,7 @@
                             app:sb_background="#ddd"
                             app:sb_show_indicator="false"
                             app:sb_uncheck_color="#ddd"
-                            app:sb_checked_color="@color/green"/>
+                            app:sb_checked_color="@color/green_1"/>
 
                     </RelativeLayout>
 

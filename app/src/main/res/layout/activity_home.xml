@@ -9,6 +9,7 @@
         android:layout_height="match_parent"
         android:id="@+id/home_layout"
         android:orientation="vertical"
+
         android:background="@color/gray_shallow">
 
     </LinearLayout>

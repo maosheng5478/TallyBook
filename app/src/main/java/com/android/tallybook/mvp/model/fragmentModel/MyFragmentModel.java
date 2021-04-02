@@ -43,7 +43,7 @@ public class MyFragmentModel extends BaseModel<MyFragmentPresenter, IFMy.M> {
                 List<BillBean> list =dao.income();
                 if (list.size() != 0) {
                     for (int i = 0; i < list.size(); i++) {
-                        total = total+Integer.parseInt(list.get(i).getCost());
+                        total = total+Double.parseDouble(list.get(i).getCost());
                     }
                     return total;
                 }

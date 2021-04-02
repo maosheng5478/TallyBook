@@ -151,11 +151,13 @@
                 <com.android.tallybook.customView.ViewPageForScrollView
                     android:id="@+id/fsta_vp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                    />
             </LinearLayout>
 
-
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp100"/>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

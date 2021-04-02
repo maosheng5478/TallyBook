@@ -12,6 +12,7 @@ import com.android.tallybook.R;
 import com.android.tallybook.base.BaseFragment;
 import com.android.tallybook.mvp.iFragment.IFMy;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MyFragmentPresenter;
+import com.android.tallybook.mvp.view.PrefenceActivity;
 import com.android.tallybook.mvp.view.SettingActivity;
 import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.SharePreferenceUtils;
@@ -92,6 +93,8 @@ public class MyFragment extends BaseFragment<MyFragmentPresenter, IFMy.V> {
     public void initListener() {
         fmy_rl_preferences.setOnClickListener(v -> {
             // jump to preferences setting
+            ActivityUtils.go(getContext(), PrefenceActivity.class);
+            getActivity().overridePendingTransition(R.anim.lr_in, R.anim.lr_out);
         });
         fmy_iv_setting.setOnClickListener(v -> {
             //jump to setting

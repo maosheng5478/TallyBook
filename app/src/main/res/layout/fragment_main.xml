@@ -44,6 +44,7 @@
         android:id="@+id/fmain_sv_page"
         android:layout_marginLeft="@dimen/dp17"
         android:layout_marginRight="@dimen/dp17"
+
         android:scrollbars="none"
         android:layout_below="@+id/fmain_layout_r1"
         >
@@ -159,6 +160,9 @@
                 android:layout_marginRight="@dimen/dp7"
                 android:divider="@null"
                 android:dividerHeight="@dimen/dp10"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp70"/>
         </LinearLayout>
     </ScrollView>
 
@@ -174,7 +178,7 @@
         app:elevation="0dp"
         app:pressedTranslationZ="0dp"
         app:rippleColor="@color/transparent"
-        app:backgroundTint="@color/transparent"
+        app:backgroundTint="@color/white"
         app:maxImageSize="@dimen/dp55"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/dp16"

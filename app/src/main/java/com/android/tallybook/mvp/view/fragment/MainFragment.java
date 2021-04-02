@@ -14,6 +14,7 @@ import com.android.tallybook.bean.BillBean;
 import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.iFragment.IFMain;
 import com.android.tallybook.mvp.presenter.fragmentPresenter.MainFragmentPresenter;
+import com.android.tallybook.mvp.view.AddActivity;
 import com.android.tallybook.mvp.view.SearchAcivity;
 import com.android.tallybook.utils.ActivityUtils;
 import com.android.tallybook.utils.LogUtils;
@@ -84,7 +85,8 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
         });
         fmain_fab_addbill.setOnClickListener(v -> {
             //jump to add data page
-
+            ActivityUtils.go(getContext(), AddActivity.class);
+            getActivity().overridePendingTransition(R.anim.lr_in, R.anim.lr_out);
         });
         fmain_layout_count.setOnClickListener(v -> {
             //set change year`s or mouth`s data
@@ -105,26 +107,14 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
         spannableString.setSpan(imgSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         fmain_tv_search.setText(spannableString);
         //初始化账单列表数据
-
+        adapter = new BillsListViewAdapter(getContext(),billBeans);
+        fmain_lvfsv_list.setAdapter(adapter);
 
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        LogUtils.d("Main","onPause");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        LogUtils.d("Main","onStop");
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        LogUtils.d("Main","onStart");
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
     }
 
     @Override
