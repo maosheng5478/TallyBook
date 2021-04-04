@@ -62,7 +62,6 @@ public class MainFragmentModel extends BaseModel<MainFragmentPresenter, IFMain.M
             public void deletBill(int i) {
                 billDao = new BillDao(context);
                 int e = billDao.deletBill(i);
-                System.out.println(e);
             }
         };
     }

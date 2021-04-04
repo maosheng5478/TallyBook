@@ -17,7 +17,7 @@ public class DateUtils {
     @SuppressLint("SimpleDateFormat")
     public static String getCurrentDate() {
         Date d = new Date();
-        sf = new SimpleDateFormat("yyyy年MM月dd日");
+        sf = new SimpleDateFormat("yyyy-MM-dd");
         return sf.format(d);
     }
 

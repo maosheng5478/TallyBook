@@ -5,7 +5,6 @@ public class BillBean {
     private String billname;
     private String cost;
     private String flow;
-
     private String time;
     private String remarks;
 

@@ -37,8 +37,8 @@ public class StatisticsFragmentPresenter extends BasePresenter<StatisticsFragmen
                 i_exp = mModel.getContract().selectExpenses();
                 i_income = mModel.getContract().selectIncome();
                 i_remain = i_income - i_exp;
-                exp.setText(String.valueOf(i_exp));
-                income.setText(String.valueOf(i_income));
+                exp.setText(String.format("%.2f",i_exp));
+                income.setText(String.format("%.2f",i_income));
                 remain.setText(String.format("%.2f",i_remain));
             }
         };

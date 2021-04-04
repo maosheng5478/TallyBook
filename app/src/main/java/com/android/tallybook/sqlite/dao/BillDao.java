@@ -48,7 +48,7 @@ public class BillDao {
                 +"%' or flow like '%"+temp+"%' or time like '%"+temp+"%'";
         @SuppressLint("Recycle")
         Cursor cursor = db.query(TABLE_NAME,null,"billname like ? or cost like ? or flow like ? or time like ?",
-                new String[]{"%"+temp+"%","%"+temp+"%","%"+temp+"%","%"+temp+"%"},null,null," time DESC");
+                new String[]{"%"+temp+"%","%"+temp+"%","%"+temp+"%","%"+temp+"%"},null,null," time DESC, id DESC");
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
@@ -62,7 +62,7 @@ public class BillDao {
      */
     public List<BillBean> income(){
         List<BillBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from bills where flow = '收入' order by cost DESC", null);
+        Cursor cursor = db.rawQuery("select * from bills where flow = '收入' order by cast(cost as int) DESC", null);
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
@@ -75,7 +75,7 @@ public class BillDao {
      */
     public List<BillBean> expenses(){
         List<BillBean> list = new ArrayList<>();
-        Cursor cursor = db.rawQuery("select * from bills where flow = '支出' order by cost DESC", null);
+        Cursor cursor = db.rawQuery("select * from bills where flow = '支出' group by time order by cast(cost as int) ASC", null);
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }

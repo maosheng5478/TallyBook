@@ -61,7 +61,13 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
                 }
                 adapter = new BillsListViewAdapter(SearchAcivity.this,billBeanList);
                 search_lvfsv_searchdata.setAdapter(adapter);
+                getContract().listviewItemClick(search_lvfsv_searchdata,billBeanList );
                 adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans) {
+                mPresenter.getContract().listviewItemClick(listViewForScrollView,billBeans);
             }
         };
     }
@@ -97,7 +103,7 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
 
     }

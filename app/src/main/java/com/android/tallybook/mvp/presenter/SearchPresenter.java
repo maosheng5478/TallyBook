@@ -1,14 +1,21 @@
 package com.android.tallybook.mvp.presenter;
 
 import android.content.Context;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 
 import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.bean.BillBean;
+import com.android.tallybook.customView.CustomDialog;
+import com.android.tallybook.customView.DialogFromBottom;
+import com.android.tallybook.customView.ListViewForScrollView;
 import com.android.tallybook.mvp.ISearch;
 import com.android.tallybook.mvp.model.SearchModel;
 import com.android.tallybook.mvp.view.SearchAcivity;
+import com.android.tallybook.utils.DateUtils;
 
+import java.text.ParseException;
 import java.util.List;
 
 public class SearchPresenter extends BasePresenter<SearchAcivity, SearchModel, ISearch.P> {
@@ -35,6 +42,50 @@ public class SearchPresenter extends BasePresenter<SearchAcivity, SearchModel, I
             @Override
             public void respondSearch(List<BillBean> list) {
                 mView.getContract().respondSearch(list);
+            }
+
+            @Override
+            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans) {
+                listViewForScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        try {
+                            String cost = billBeans.get(position).getCost();
+                            if (billBeans.get(position).getFlow().equals("支出")){
+                                cost = "-" + cost;
+                            }
+                            CustomDialog mDialog = new CustomDialog(mView, billBeans.get(position).getBillname(),
+                                    cost, DateUtils.getDateFormatForC(billBeans.get(position).getTime()));
+
+                            mDialog.setCanceledOnTouchOutside(false);
+                            mDialog.show();
+                            mDialog.setCallBack(new CustomDialog.callBack() {
+                                @Override
+                                public void editListener() {
+                                    //jump to edit page
+                                }
+
+                                @Override
+                                public void deletListener() {
+                                    DialogFromBottom dialogFromBottom = new DialogFromBottom(mView);
+                                    dialogFromBottom.show();
+                                    dialogFromBottom.setCallback(new DialogFromBottom.callback() {
+                                        @Override
+                                        public void setConfirmListener() {
+                                            mModel.getContract().deletBill(billBeans.get(position).getId());
+                                            mView.onResume();
+                                            dialogFromBottom.dismiss();
+                                            mDialog.cancel();
+                                        }
+                                    });
+                                }
+                            });
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                            mView.responrse("date-error",e);
+                        }
+                    }
+                });
             }
         };
     }

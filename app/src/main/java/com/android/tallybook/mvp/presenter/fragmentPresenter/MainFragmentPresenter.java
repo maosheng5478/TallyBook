@@ -45,8 +45,8 @@ public class MainFragmentPresenter extends BasePresenter<MainFragment, MainFragm
                 double exp = mModel.getContract().selectExpenses();
                 double income = mModel.getContract().selectIncome();
                 tv1.setText(String.format("%.2f",income - exp ));
-                tv2.setText(String.valueOf(income));
-                tv3.setText(String.valueOf(exp));
+                tv2.setText(String.format("%.2f",income));
+                tv3.setText(String.format("%.2f",exp));
             }
 
             @Override
@@ -78,7 +78,7 @@ public class MainFragmentPresenter extends BasePresenter<MainFragment, MainFragm
                                         @Override
                                         public void setConfirmListener() {
                                             mModel.getContract().deletBill(billBeans.get(position).getId());
-                                            mView.onResume();
+                                            mView.getContract().findBillData();
                                             dialogFromBottom.dismiss();
                                             mDialog.cancel();
                                         }

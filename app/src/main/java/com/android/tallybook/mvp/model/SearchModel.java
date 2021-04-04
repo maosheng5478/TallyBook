@@ -31,6 +31,12 @@ public class SearchModel extends BaseModel<SearchPresenter, ISearch.M> {
                 mPresenter.getContract().respondSearch(billDaoList);
                 //System.out.println(billDaoList);
             }
+
+            @Override
+            public void deletBill(int i) {
+                dao = new BillDao(context);
+                int e = dao.deletBill(i);
+            }
         };
     }
 }

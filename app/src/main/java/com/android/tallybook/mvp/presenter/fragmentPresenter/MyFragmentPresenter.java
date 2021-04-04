@@ -39,9 +39,9 @@ public class MyFragmentPresenter extends BasePresenter<MyFragment, MyFragmentMod
                     SharePreferenceUtils.put(mView.getContext(),"seeData",seeData);
                     imageView.setImageDrawable(mView.getResources().getDrawable(R.drawable.ic_see,null));
                     tv1.setText(String.format("%.2f",income - exp ));
-                    tv2.setText(String.valueOf(income));
+                    tv2.setText(String.format("%.2f",income));
                     if (exp != 0.0){
-                        tv3.setText("-"+ exp);
+                        tv3.setText("-"+ String.format("%.2f",exp));
                     }else {
                         tv3.setText("0.0");
                     }
