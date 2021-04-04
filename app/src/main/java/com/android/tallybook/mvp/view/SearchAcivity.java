@@ -61,13 +61,13 @@ public class SearchAcivity extends BaseActivity<SearchPresenter, ISearch.V> {
                 }
                 adapter = new BillsListViewAdapter(SearchAcivity.this,billBeanList);
                 search_lvfsv_searchdata.setAdapter(adapter);
-                getContract().listviewItemClick(search_lvfsv_searchdata,billBeanList );
+                getContract().listviewItemClick(search_lvfsv_searchdata,billBeanList,search_et_key );
                 adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans) {
-                mPresenter.getContract().listviewItemClick(listViewForScrollView,billBeans);
+            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans,EditText editText) {
+                mPresenter.getContract().listviewItemClick(listViewForScrollView,billBeans,editText );
             }
         };
     }

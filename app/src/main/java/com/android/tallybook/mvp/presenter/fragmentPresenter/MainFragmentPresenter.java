@@ -78,7 +78,7 @@ public class MainFragmentPresenter extends BasePresenter<MainFragment, MainFragm
                                         @Override
                                         public void setConfirmListener() {
                                             mModel.getContract().deletBill(billBeans.get(position).getId());
-                                            mView.getContract().findBillData();
+                                            mView.onResume();
                                             dialogFromBottom.dismiss();
                                             mDialog.cancel();
                                         }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.EditText;
 
 import com.android.tallybook.base.BasePresenter;
 import com.android.tallybook.bean.BillBean;
@@ -45,7 +46,7 @@ public class SearchPresenter extends BasePresenter<SearchAcivity, SearchModel, I
             }
 
             @Override
-            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans) {
+            public void listviewItemClick(ListViewForScrollView listViewForScrollView, List<BillBean> billBeans, EditText text) {
                 listViewForScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -73,7 +74,7 @@ public class SearchPresenter extends BasePresenter<SearchAcivity, SearchModel, I
                                         @Override
                                         public void setConfirmListener() {
                                             mModel.getContract().deletBill(billBeans.get(position).getId());
-                                            mView.onResume();
+                                            mView.getContract().searchBills(text.getText().toString());
                                             dialogFromBottom.dismiss();
                                             mDialog.cancel();
                                         }
