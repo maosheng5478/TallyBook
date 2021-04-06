@@ -14,6 +14,7 @@ import com.android.tallybook.utils.PermissionUtil;
 import com.android.tallybook.utils.SharePreferenceUtils;
 import com.android.tallybook.utils.WeakHandler;
 
+import java.util.Arrays;
 import java.util.List;
 
  public class WelcomePresenter extends BasePresenter<WelcomeActivity, WelcomeModel, IWelcome.P> {

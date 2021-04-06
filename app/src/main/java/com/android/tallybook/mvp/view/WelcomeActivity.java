@@ -10,10 +10,14 @@ import androidx.annotation.RequiresApi;
 
 import com.android.tallybook.R;
 import com.android.tallybook.base.BaseActivity;
+import com.android.tallybook.customView.permission.PermissionListener;
 import com.android.tallybook.mvp.IWelcome;
 import com.android.tallybook.mvp.presenter.WelcomePresenter;
 import com.android.tallybook.utils.APPUtils;
+import com.android.tallybook.utils.PermissionUtil;
 import com.android.tallybook.utils.StatusBarUtils;
+
+import java.util.List;
 
 public class WelcomeActivity extends BaseActivity<WelcomePresenter, IWelcome.V> {
 
@@ -60,6 +64,7 @@ public class WelcomeActivity extends BaseActivity<WelcomePresenter, IWelcome.V> 
         wel_iv_appicon.setImageDrawable(APPUtils.getAppIcon());
         wel_tv_vsname.setText("版本号："+APPUtils.getvsname(this));
         getContract().EntetrJudge();
+
     }
 
     @Override
