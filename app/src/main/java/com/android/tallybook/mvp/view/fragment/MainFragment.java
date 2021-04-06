@@ -114,7 +114,7 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
                     getActivity().runOnUiThread(new Runnable() {
                         public void run() {
                             //就是在主线程上操作,弹出结果
-                            if(state.equals("success")){
+                            if("success".equals(state)){
                                 System.out.println("ssssssss");
                                 ToastUtils.showToast(getContext(),"success");
                             }else{
