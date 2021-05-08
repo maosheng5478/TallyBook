@@ -156,6 +156,7 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
 
     @Override
     public void onResume() {
+        //model层查询所有账单
         getContract().findBillData();
         LogUtils.d("Main","onResume");
         super.onResume();
@@ -164,11 +165,12 @@ public class MainFragment extends BaseFragment<MainFragmentPresenter, IFMain.V> 
         }else {
             fmain_iv_nodata.setVisibility(View.VISIBLE);
         }
-
+        //为listview添加账单适配器
         adapter = new BillsListViewAdapter(getContext(),billBeans);
         fmain_lvfsv_list.setAdapter(adapter);
+        //设置listview添加item点击事件
         getContract().listviewItemClick(fmain_lvfsv_list,billBeans );
-
+        //设置金额格式，为0.00（保留两位小数）
         getContract().initSeeView(fmain_tv_num,fmain_tv_in,fmain_tv_out);
         adapter.notifyDataSetChanged();
 

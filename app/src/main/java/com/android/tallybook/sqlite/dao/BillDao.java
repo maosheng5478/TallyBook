@@ -44,15 +44,12 @@ public class BillDao {
      */
     public List<BillBean> blurredQury(String temp){
         List<BillBean> list = new ArrayList<>();
-        String sql = "select * from bills where billname like '%"+temp+"%' or cost like '%"+temp
-                +"%' or flow like '%"+temp+"%' or time like '%"+temp+"%'";
         @SuppressLint("Recycle")
         Cursor cursor = db.query(TABLE_NAME,null,"billname like ? or cost like ? or flow like ? or time like ?",
                 new String[]{"%"+temp+"%","%"+temp+"%","%"+temp+"%","%"+temp+"%"},null,null," time DESC, id DESC");
         while (cursor.moveToNext()){
             list.add(addtolist(cursor));
         }
-        System.out.println(list);
         return list;
     }
 

@@ -1,5 +1,6 @@
 package com.android.tallybook.base;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -59,6 +60,7 @@ public abstract class BaseActivity<P extends BasePresenter,CONTRACT> extends App
         super.onDestroy();
         destroy();
         mPresenter.unBindView();
+        closeDialog(dialog);
     }
     public abstract void destroy();
 
@@ -66,7 +68,7 @@ public abstract class BaseActivity<P extends BasePresenter,CONTRACT> extends App
     public Dialog showloading(Context context, String msg) {
         {
             LayoutInflater inflater = LayoutInflater.from(context);
-            View v = inflater.inflate(R.layout.layout_dialog_loading, null);// 得到加载view
+            @SuppressLint("InflateParams") View v = inflater.inflate(R.layout.layout_dialog_loading, null);// 得到加载view
             LinearLayout layout = (LinearLayout) v
                     .findViewById(R.id.dialog_loading_view);// 加载布局
             TextView tipTextView = (TextView) v.findViewById(R.id.tipTextView);// 提示文字
@@ -78,9 +80,6 @@ public abstract class BaseActivity<P extends BasePresenter,CONTRACT> extends App
             loadingDialog.setContentView(layout, new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT));// 设置布局
-            /**
-             *将显示Dialog的方法封装在这里面
-             */
             Window window = loadingDialog.getWindow();
             WindowManager.LayoutParams lp = window.getAttributes();
             lp.width = WindowManager.LayoutParams.MATCH_PARENT;

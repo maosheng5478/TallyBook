@@ -29,10 +29,10 @@ public class GuidePresenter extends BasePresenter<GudieActivity, GuideModel, IGu
             @Override
             public void initViewPager(int[] images, ArrayList<ImageView> imageViews, Button gudie_btn_begin) {
                 ViewPager.LayoutParams mParams = new ViewPager.LayoutParams();
-                for(int i = 0; i< images.length; i++) {
+                for (int image : images) {
                     ImageView iv = new ImageView(mView);
                     iv.setLayoutParams(mParams);//设置布局
-                    iv.setImageResource(images[i]);//为ImageView添加图片资源
+                    iv.setImageResource(image);//为ImageView添加图片资源
                     iv.setScaleType(ImageView.ScaleType.FIT_XY);//这里也是一个图片的适配
                     imageViews.add(iv);
 
@@ -51,13 +51,7 @@ public class GuidePresenter extends BasePresenter<GudieActivity, GuideModel, IGu
                     ImageView imageView = new ImageView(mView);
                     imageView.setLayoutParams(mParams);
                     imageView.setImageResource(R.drawable.dotselector);
-                    if(i== 0)
-                    {
-                        imageView.setSelected(true);//默认启动时，选中第一个小圆点
-                    }
-                    else {
-                        imageView.setSelected(false);
-                    }
+                    imageView.setSelected(i == 0);//默认启动时，选中第一个小圆点
                     dotView[i] = imageView;//得到每个小圆点的引用，用于滑动页面时，（onPageSelected方法中）更改它们的状态。
                     layout.addView(imageView);//添加到布局里面显示
                 }
@@ -70,7 +64,7 @@ public class GuidePresenter extends BasePresenter<GudieActivity, GuideModel, IGu
 
             @Override
             public void tohome(String msg) {
-                mView.dialog = mView.showloading(mView,msg);
+                //mView.dialog = mView.showloading(mView,msg);
                new WeakHandler().postDelayed(new Runnable() {
                    @Override
                    public void run() {
@@ -79,7 +73,7 @@ public class GuidePresenter extends BasePresenter<GudieActivity, GuideModel, IGu
                        mView.finish();
                    }
                },1000);
-
+               mView.closeDialog(mView.dialog);
             }
         };
     }

@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/fmain_tv_wallet"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_wallet"
             />
@@ -182,5 +181,6 @@
         app:maxImageSize="@dimen/dp55"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/dp16"
-        android:id="@+id/fmain_fab_addbill"/>
+        android:id="@+id/fmain_fab_addbill"
+        android:contentDescription="@string/assets" />
 </RelativeLayout>
